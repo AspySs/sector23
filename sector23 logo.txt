@@ -1,0 +1,9 @@
+http://sector23.ru/administrator/index.php
+sadmin
+0qT()6E*4%uHxE9SoI
+
+Текущие настройки базы данных:
+SQL:
+db: sector23
+user: sector23
+passw: EfY4smsnXmAV9jxL
