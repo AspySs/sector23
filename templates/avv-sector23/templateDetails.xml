@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension method="upgrade" type="template" version="3.0">
+<name>avv-sector23</name>
+<author>avvdesign</author>
+<creationDate>Dec 2015</creationDate>
+<copyright>(C) 2007 - 2015 AVVdesign, LLC. All rights reserved.</copyright>
+<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+<authorEmail>avvdesign@inbox.ru</authorEmail>
+<authorUrl>http://avvdesign.ru</authorUrl>
+<version>1.0.0</version>
+<description>AVV sektor23.ru</description>
+<legacycss>false</legacycss>
+<gridcss>false</gridcss>
+<files>
+	<folder>css</folder>
+	<folder>html</folder>
+	<folder>images</folder>
+	<folder>js</folder>
+	<folder>language</folder>
+	<filename>index.html</filename>	
+	<filename>favicon.ico</filename>
+	<filename>error.php</filename>
+	<filename>index.php</filename>
+	<filename>templateDetails.xml</filename>
+</files>
+<positions>
+	<position>banner</position>
+	<position>counters</position>
+	<position>footer</position>
+	<position>header</position>
+	<position>scripts</position>
+	<position>topmenu</position>
+	<position>topslider</position>
+</positions>
+<languages folder="language">
+	<language tag="ru-RU">ru-RU/ru-RU.tpl_avv-sector23.ini</language>
+	<language tag="ru-RU">ru-RU/ru-RU.tpl_avv-sector23.sys.ini</language>
+	<language tag="en-GB">en-GB/en-GB.tpl_avv-sector23.ini</language>
+	<language tag="en-GB">en-GB/en-GB.tpl_avv-sector23.sys.ini</language>
+</languages>
+</extension>
