@@ -1,0 +1,20 @@
+body {
+	background-color: #033d00;
+	background-image: url(http://www.transparenttextures.com/patterns/mocha-grunge.png);
+}
+
+.left {
+	width: 400px;
+	height: 200px;
+	margin: 200px;
+	background-color: rgb(15,15,15, 0.0);
+	overflow: hidden;
+}
+
+.left span {
+	width: 70%;
+	height: 200px;
+	display: block;
+	transform: rotate(45deg);
+	background-color: #fff;
+}
