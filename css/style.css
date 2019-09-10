@@ -12,9 +12,8 @@ body {
 }
 
 .left span {
-	width: 70%;
+	width: 300px;
 	height: 200px;
-	display: block;
 	transform: rotate(45deg);
 	background-color: #fff;
 }
