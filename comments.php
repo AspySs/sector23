@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['done'])){
-	$text = $_POST['text'];
-	$nickname = $_POST['nickname'];
+	$text = strip_tags($_POST['text']);
+	$nickname = strip_tags($_POST['nickname']);
 	$status = 'false';
 	$date = time();
 	$ip = getIP();
