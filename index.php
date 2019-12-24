@@ -1,36 +1,6 @@
 <?php
-$date = time();
-$ip = getIP();
-require "includes/bd.php";
-$bd -> query("INSERT INTO `users` (`id`, `ip`, `time`) VALUES (NULL, '".$ip."', '".$date."');");
-$ALLusers = $bd -> query("SELECT MAX(`id`) FROM `users`");
-$bd -> close();
-$COLVO = vivCOL($ALLusers);
-$numb = 7000+$COLVO;
-
-
-function vivCOL($result_set){
-
-	while(($row = $result_set->fetch_assoc()) != false){
-
-		//echo $row["login"];
-		//echo "<br />";
-		return $row["MAX(`id`)"];
-		
-	}
-}
-function getIP()
-{
-	$client  = @$_SERVER['HTTP_CLIENT_IP'];
-	$forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-	$remote  = @$_SERVER['REMOTE_ADDR'];
- 
-	if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
-	elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
-	else $ip = $remote;
- 
-		return $ip;
-}
+if(@$_GET['send']=='succes'){echo"Ваш комментарий доставлен на обработку";}
+elseif (@$_GET['send']=='fail'){echo"произошла ошибка, попробуйте снова!";}
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,11 +10,10 @@ function getIP()
 	<title>Sector 23</title>
 </head>
 <body>
-	<form action="comm" method="POST">
-		<input type="text" placeholder="Имя"><br><br>
-		<input type="text" placeholder="Фаимилия"><br><br>
-		<textarea name="text" placeholder="Ваш отзыв"></textarea><br><br>
-		<button class="btn">Отправить</button>
+	<form action="comments.php" method="POST">
+		<input type="text" placeholder="ФИО или ник" name="nickname"><br><br>
+		<textarea name="text" placeholder="Ваш отзыв" name="text"></textarea><br><br>
+		<button class="btn" type="submit" name="done">Отправить</button>
 	</form>
 	<style>
 		form {
