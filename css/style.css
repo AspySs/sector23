@@ -112,3 +112,14 @@ body {
     margin: 0 8px 0 8px;
     top: 6px;
 }
+
+
+.content {
+    width: 74%;
+    margin-left: 13%;
+    margin-top: 60px;
+}
+
+.content p {
+    margin: 0;
+}
