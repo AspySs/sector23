@@ -42,7 +42,7 @@ body {
     top: calc(50% - 1px);
     left: 0;
     height: 2px;
-    background-color: #1B702A;
+    background-color: #2d3c27;
 }
 
 .menu a {
@@ -52,22 +52,35 @@ body {
     padding: 6px 18px;
     text-decoration: none;
     color:  #fff;
-    text-shadow: 3px 2px 0 #4A9642;
+    box-shadow: 0 0 10px #000;
     border-radius: 8px;
-    border-bottom: 2px solid #1B702A;
+    border: 1.5px solid #474747;
     font-size: 24px;
     font-weight: 500;
-    background-color: #4FB761;
+    background: url(../img/btn-bg.png) no-repeat #1B702A;
+    background-size: auto auto;
     transition-property: background-color;
     transition-duration: 0.5s;
+}
+
+.menu a span {
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    bottom: 5px;
+    height: 2px;
+    background-color: #fff;
+    transition: all ease 0.5s;
 }
 
 .menu a+a {
     margin-left: 140px;
 }
 
-.menu a:hover {
-    background-color: #1B702A;
+.menu a:hover span {
+    opacity: 1;
 }
 
 .main {
@@ -236,7 +249,7 @@ footer {
     display: inline-block;
     position: relative;
     width: 100%;
-    padding: 0;
+    padding: 10px 0;
     background-color: #4A9642;
 }
 
