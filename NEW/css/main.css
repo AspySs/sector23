@@ -12,6 +12,7 @@ header {
     margin: 0;
     padding: 0;
     background-color: rgb(46, 46, 46);
+    height: 70px;
 }
 
 .menu {
@@ -43,4 +44,29 @@ header span {
     margin: 15px 0;
     border-radius: 5px;
     border: 1.5px solid rgb(42, 131, 20);
+}
+
+
+.mBtn {
+    display: none;
+    height: 24px;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-size: 24px;
+    line-height: 24px;
+    position: absolute;
+    right: 40px;
+    top: calc(50% - 22px);
+    color: #fff;
+    background-color: rgb(42, 131, 20);
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .mBtn {
+        display: inline-block;
+    }
 }
