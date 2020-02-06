@@ -1,6 +1,7 @@
 <?php
 if(@$_GET['send']=='succes'){echo"Ваш комментарий доставлен на обработку";}
-elseif (@$_GET['send']=='fail'){echo"произошла ошибка, попробуйте снова!";}
+elseif (@$_GET['send']=='fail'){@$error = $_GET['error']; echo"<strong>".$error."</strong>";}
+include_once('functions.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,11 +11,16 @@ elseif (@$_GET['send']=='fail'){echo"произошла ошибка, попро
 	<title>Sector 23</title>
 </head>
 <body>
-	<form action="comments.php" method="POST">
-		<input type="text" placeholder="ФИО или ник" name="nickname"><br><br>
+	</form>
+	    <form action="comments.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="file"></br></br>
+      <input type="text" placeholder="ФИО или ник" name="nickname"><br><br>
 		<textarea name="text" placeholder="Ваш отзыв" name="text"></textarea><br><br>
 		<button class="btn" type="submit" name="done">Отправить</button>
-	</form>
+    </form>
+
+	<form action="comments.php" method="POST">
+		
 	<style>
 		form {
 			width: 500px;
