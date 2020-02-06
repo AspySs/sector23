@@ -1,15 +1,15 @@
 <?php
-session_set_cookie_params(21600);
-session_start();
-if($_SESSION['auth']=="true"){
+//session_set_cookie_params(21600);
+//session_start();
+//if($_SESSION['auth']=="true"){
 //СДЕЛАТЬ ЗАЩИТУ ЧЕРЕЗ СЕССИЮ И АВТОРИЗАЦИЮ
-include 'includes/bd.php';
-$ALL = $bd -> query("SELECT * FROM `comments`");
-$ALLids = $bd -> query("SELECT `id` FROM `comments`");
-$bd->close();
-$all = vivALL($ALL);
-$colvo = vivCOL($ALLids);
-}else{header("Location: auth.php");}
+//include 'includes/bd.php';
+//$ALL = $bd -> query("SELECT * FROM `comments`");
+//$ALLids = $bd -> query("SELECT `id` FROM `comments`");
+//$bd->close();
+//$all = vivALL($ALL);
+//$colvo = vivCOL($ALLids);
+//}else{header("Location: auth.php");}
 
 function vivALL($result_set){
 $o = 0;
