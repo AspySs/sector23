@@ -5,6 +5,8 @@
     padding: 0;
 }
 
+
+
 body {
     height: 1900px;
 }
@@ -43,6 +45,7 @@ header .logo {
 
 .menu a {
     display: inline-block;
+    position: relative;
     color: #fff;
     font-size: 20px;
     font-weight: 500;
@@ -53,11 +56,62 @@ header .logo {
     border: 1.5px solid rgb(42, 131, 20);
 }
 
-.menu span {
+.menu .logoH {
     display: none;
     margin: 15px 0;
     font-size: 32px;
     color: #fff;
+}
+
+.dropmenu, .dropmenu a {
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 25px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1.5px solid rgb(42, 131, 20);
+    background-color: rgb(31, 31, 31);
+}
+
+.dropmenu svg {
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    left: 5px;
+    top: calc(50% - 8px);
+    width: 20px;
+    height: 20px;
+    transition: 0.7s;
+}
+
+.dropmenu a {
+    position: absolute;
+    opacity: 0;
+    top: 30px;
+    left: 0;
+}
+
+.dropmenu a::before {
+    display: inline-block;
+    content: '';
+    width: calc(100% + 20px);
+    height: 60px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+    background-color: rgb(31, 31, 31);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.dropmenu a + a {
+    top: 70px;
 }
 
 .mBtn {
@@ -68,11 +122,13 @@ header .logo {
     position: absolute;
     right: 80px;
     top: calc(50% - 1px);
+    border-radius: 4px;
 }
 
 .mBtn::before, .mBtn::after {
     content: '';
     display: inline-block;
+    border-radius: 4px;
     width: 35px;
     height: 2px;
     background-color: #fff;
@@ -89,21 +145,21 @@ header .logo {
 
 .content {
     display: flex;
-    margin: 80px 5%;
+    margin: 20px 5%;
 }
 
 @media (max-width: 768px) {
     header {
         top: 0;
         position: fixed;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(12, 12, 12);
     }
 
-    .menu a {
+    .menu a, .dropmenu {
         display: none;
     }
 
-    .menu span {
+    .menu .logoH {
         display: inline-block;
         position: absolute;
         left: 20px;
