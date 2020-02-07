@@ -115,32 +115,56 @@ header .logo {
 }
 
 .mBtn {
-    display: none;
-    width: 35px;
-    height: 2px;
-    background-color: #fff;
+    display: inline-block;
     position: absolute;
     right: 80px;
-    top: calc(50% - 1px);
-    border-radius: 4px;
+    top: calc(50% - 24px);
+    padding: 4px;
+    width: 40px;
+    height: 40px;
 }
 
-.mBtn::before, .mBtn::after {
-    content: '';
-    display: inline-block;
-    border-radius: 4px;
+.mBtn span {
+    z-index: 99;
     width: 35px;
     height: 2px;
     background-color: #fff;
     position: absolute;
+    top: calc(50% - 1px);
+    border-radius: 4px;
+    transform-origin: 50% 50%;
+    transition: 0.7s;
 }
 
-.mBtn::before {
-    top: -10px;
+.mBtn span+span {
+    transform: translateY(-10px);
 }
 
-.mBtn::after {
-    top: 10px;
+.mBtn span+span+span {
+    transform: translateY(10px);
+}
+
+.mMenu {
+    display: inline-block;
+    position: fixed;
+    text-align: center;
+    top: 0px;
+    right: calc(-45%);
+    width: calc(40% - 30px);
+    padding: 80px 15px 5px 15px;
+    background-color: rgb(0, 0, 0, 0.9);
+    transition: 0.7s;
+}
+
+.mMenu a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 4px 15px;
+    min-width: 80%;
+    border-bottom: 1px solid #fff;
 }
 
 .content {
@@ -149,6 +173,10 @@ header .logo {
 }
 
 @media (max-width: 768px) {
+    .content {
+        margin: 80px 5px;
+    }
+
     header {
         top: 0;
         position: fixed;
