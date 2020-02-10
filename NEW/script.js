@@ -42,7 +42,7 @@ window.onload = function() {
             }
 
             if (mMenuCheck == "open") {
-                mMenu.style.right = "calc(-45%)";
+                mMenu.style.right = "calc(-40% - 30px)";
                 mBtnSpan[0].style.opacity = "1";
                 mBtnSpan[1].style.transform = "rotate(0)";
                 mBtnSpan[1].style.transform = "translateY(-10px)";
@@ -58,6 +58,7 @@ window.onload = function() {
 
                 if (dropcheck == "hidden") {
                     for (i = 0; i < droplist.length; i++) {
+                        droplist[i].style.display = "inline-block";
                         droplist[i].style.opacity = "1";
                     }
                     dropcheck = "open";
@@ -67,6 +68,7 @@ window.onload = function() {
 
                 if (dropcheck == "open") {
                     for (i = 0; i < droplist.length; i++) {
+                        droplist[i].style.display = "none";
                         droplist[i].style.opacity = "0";
                     }
                     dropcheck = "hidden";
