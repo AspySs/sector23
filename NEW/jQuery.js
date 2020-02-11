@@ -2,11 +2,11 @@ $(document).ready(function() {
 
 var slideNow = 1,
 translateWidth = 0,
-slideInterval = 2500,
+slideInterval = 3500,
 slideCount = $('.carousel').children().length,
 switchInterval = setInterval(nextSlide, slideInterval);
 
-$('.viewport').hover( function() {
+$('.slider-block').hover( function() {
     clearInterval(switchInterval);
 }, function(){
     switchInterval = setInterval(nextSlide, slideInterval);
@@ -29,7 +29,7 @@ function prevSlide() {
     if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
         translateWidth = - $('.viewport').width() * (slideCount-1);
         $('.carousel').css('transform', 'translate('+ translateWidth + 'px, 0)');
-        slideNow = slideCount;
+        slideNow = slideCount + 1;
     } else {
         translateWidth = - $('.viewport').width() * (slideNow - 2);
         $('.carousel').css({

@@ -1,7 +1,7 @@
 window.onload = function() {
     var header = document.body.querySelector('header'),
         dropmenu = document.body.querySelector(".dropmenu"),
-        droplist = document.body.querySelector(".dropmenu").getElementsByTagName("a"),
+        droplist = document.body.querySelector(".dropmenu").getElementsByTagName("li"),
         svg = document.body.querySelector(".dropmenu").querySelector("svg"),
         mBtn = document.body.querySelector(".mBtn"),
         mMenu = document.body.querySelector(".mMenu"),
@@ -57,9 +57,8 @@ window.onload = function() {
     function drop() {
 
                 if (dropcheck == "hidden") {
-                    for (i = 0; i < droplist.length; i++) {
-                        droplist[i].style.display = "inline-block";
-                        droplist[i].style.opacity = "1";
+                    for (i = 0; i < droplist.length - 1; i++) {
+                        droplist[i+1].style.display = "inline-block";
                     }
                     dropcheck = "open";
                     svg.style.transform = "rotate(180deg)";
@@ -67,9 +66,8 @@ window.onload = function() {
                 }
 
                 if (dropcheck == "open") {
-                    for (i = 0; i < droplist.length; i++) {
-                        droplist[i].style.display = "none";
-                        droplist[i].style.opacity = "0";
+                    for (i = 0; i < droplist.length - 1; i++) {
+                        droplist[i+1].style.display = "none";
                     }
                     dropcheck = "hidden";
                     svg.style.transform = "rotate(360deg)";
