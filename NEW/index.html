@@ -1,51 +1,195 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/start.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+    <script src="./script/jquery.js"></script>
+    <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=b9e4d38e-4224-4bdd-b04a-8e04841d3e14?apikey=b9e4d38e-4224-4bdd-b04a-8e04841d3e14&load=package.standard&lang=ru-RU" type="text/javascript"> </script>
     <title>Sector 23</title>
 </head>
 <body>
+    <span class="topBtn"><img src="./img/top.svg"></span>
     <header>
-        <div class="menu">
-        <a href="http://sector.sphinxs.ru/main.html">Главная</a>
-        <a href="#">Блог</a>
-        <a href="#">Цена</a>
-        </div>
+        <img src="./img/logo.svg" id="logo">
+        <div id="mobileHeaderName">Sector</div>
+        <ul id="headerMenu">
+            <span></span>
+            <li><a class="first" href="#">Пейнтбол <?xml version="1.0" encoding="iso-8859-1"?>
+                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 512.043 512.043" style="enable-background:new 0 0 512.043 512.043;" xml:space="preserve">
+                <g transform="translate(0 -1)">
+                    <g>
+                        <g>
+                            <path d="M368.936,241.958L256.021,354.873L143.106,241.958c-13.439-13.439-36.418-3.921-36.418,15.085v108.139
+                                c0,5.701,2.282,11.164,6.336,15.172l128,126.528c8.311,8.215,21.684,8.215,29.995,0l128-126.528
+                                c4.054-4.008,6.336-9.471,6.336-15.172V257.043C405.355,238.037,382.376,228.519,368.936,241.958z M362.688,356.272
+                                l-106.667,105.44l-106.667-105.44v-47.727l91.582,91.582c8.331,8.331,21.839,8.331,30.17,0l91.582-91.582V356.272z"/>
+                            <path d="M368.936,7.291L256.021,120.206L143.106,7.291c-13.439-13.439-36.418-3.921-36.418,15.085v108.139
+                                c0,5.701,2.282,11.164,6.336,15.172l128,126.528c8.311,8.215,21.684,8.215,29.995,0l128-126.528
+                                c4.054-4.008,6.336-9.471,6.336-15.172V22.376C405.355,3.37,382.376-6.148,368.936,7.291z M362.688,121.606l-106.667,105.44
+                                l-106.667-105.44V73.879l91.582,91.582c8.331,8.331,21.839,8.331,30.17,0l91.582-91.582V121.606z"/>
+                        </g>
+                    </g>
+                </g></svg>
+                </a></li>
+            <li class="hidden"><a href="#">Лазертаг</a></li class="hidden">
+            <li class="hidden"><a href="#">Страйкбол</a></li>
+        </ul>
+        <a href="#">Цены</a>
+        <a href="#">О нас</a>
+        <span id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
     </header>
-    <span class="h">Sector</span>
-    <a class="logo" href="http://sector.sphinxs.ru/main.html">
-        <span></span>
-        <span></span>
-        <?xml version="1.0" encoding="utf-8"?>
-        <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 2049 2049" style="enable-background:new 0 0 2049 2049;" xml:space="preserve">
-        <style type="text/css">
-            .st0{fill:#1A1A1A;}
-            .st1{fill:#990000;}
-        </style>
-        <title>slogo</title>
-        <g>
-            <circle class="st0" cx="1024.5" cy="1024.5" r="1024"/>
-        </g>
-       <path class="st1" d="M979.8,804.8c0,42.2-8.1,82-24.2,119.2c-31.3,73.4-89.7,131.9-163,163.4c-37,16.1-76.6,24.2-118.9,24.2H571.3
-            c-55.7-0.5-101.3,44.3-101.8,100c0,0.6,0,1.2,0,1.8v101.8h482.6v204.3H265.2v-306.1c0-42.2,8.1-82,24.2-119.2
-            c15.6-36.4,37.9-69.5,65.8-97.5c27.9-27.9,60.9-50.1,97.2-65.5c37-15.9,76.6-23.8,118.9-23.8h102.5c27.1,0.2,53.1-10.4,72.3-29.5
-            c9.3-9.4,16.7-20.5,21.7-32.8c5.3-12.7,7.9-26.4,7.8-40.2c0.4-55.8-44.4-101.4-100.2-101.8c-0.5,0-1.1,0-1.6,0H309.3V498.8h364.5
-            c42.2,0,81.9,8.1,118.9,24.2c73.2,31.4,131.6,89.8,163,163C971.8,723,979.8,762.6,979.8,804.8z"/>
-        <path class="st1" d="M1820.5,1213.4c0,42.2-8.1,81.9-24.2,118.9c-31.4,73.2-89.8,131.6-163,163c-37,16.1-76.6,24.2-118.9,24.2
-            h-408.6v-204.3h408.6c56.2,0,101.8-45.5,101.9-101.7c0-56.2-45.5-101.8-101.7-101.9c0,0-0.1,0-0.1,0h-278.3V907.3h278.3
-            c27.1,0.2,53.1-10.4,72.3-29.5c9.3-9.4,16.7-20.5,21.7-32.8c5.3-12.7,7.9-26.4,7.8-40.2c0.4-55.8-44.4-101.4-100.2-101.8
-            c-0.5,0-1.1,0-1.6,0h-408.6V498.8h408.6c42.2,0,81.9,8.1,118.9,24.2c73.2,31.4,131.6,89.8,163,163c16.1,37,24.2,76.7,24.2,118.9
-            c0,37.4-7,74.5-20.7,109.3c-13.5,34.9-33.3,67.1-58.3,95c25,27.9,44.8,60.1,58.3,95C1813.5,1138.9,1820.5,1176,1820.5,1213.4z"/>
-        </svg>
+    
+    <ul id="mobileMenu">
+        <span><a href="#">О нас</a></span>
+        <span><a href="#">Цены</a></span>
+        <span><a href="#">Блог</a></span>
+    </ul>
+
+    <div class="content">
+        <div class="row">
+            <h2>Сектор 23</h2>
+            <h3>Зона активного отдыха</h3>
+    
+            <div class="owl-carousel owl-theme carousel gallery">
+                <div class="item"><img src="./img/img1.jpg"></div>
+                <div class="item"><img src="./img/img2.jpg"></div>
+                <div class="item"><img src="./img/img3.jpg"></div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <h3><r>7</r> Причин, чтобы выбрать Сектор 23</h3>
+        <article>
+            <h4><span>Комфорт и безопасность</span></h4>
+            <img src="./img/shield.svg">
+            <p>Мы предоставляем закрытый и оборудованный полигон в центре Лазаревского, играть на котором комфортно и безопасно</p>
+        </article>
+        <article>
+            <h4><span>Зона отдыха</span></h4>
+            <img src="./img/bbq.svg">
+            <p>Помимо игры вы можете воспользоваться зоной отдыха с мангалом и печкой-буржуйкой</p>
+        </article>
+        <article>
+            <h4><span>Разнообразие оборудования</span></h4>
+            <img src="./img/helmet.svg">
+            <p>У нас вы можете сыграть не только в пейнтбол, но и в лазертаг или страйкбол</p>
+        </article>
+        <article>
+            <h4><span>Турниры</h4>
+            <img src="./img/award.svg">
+            <p>Есть возможность организовать турнир для компаний, классов и студенческих групп</p>
+        </article>
+        <article>
+            <h4><span>Интересно всем</span></h4>
+            <img src="./img/family.svg">
+            <p>Активный отдых заинтересует как детей, так и взрослых</p>
+        </article>
+        <article>
+            <h4><span>Организация мероприятий</span></h4>
+            <img src="./img/event.svg">
+            <p>Возможность провести лазертаг на выезде (при наличии подходящих условий)</p>
+        </article>
+        <article>
+            <h4><span>Доступные цены</span></h4>
+            <img src="./img/offer.svg">
+            <p>Стоимость игры от 400 руб. Для компаний от 10 человек - скидки</p>
+        </article>
+        </div>
+
         
-    </a>
+
+        <div class="row" id="about">
+            <center><span>О нас</span></center>
+            <div class="half">
+                <h3>Где нас найти</h3>
+                <div id="map">
+                
+                </div>
+            </div>
+            <div class="half">
+                <h3>Связаться с нами</h3>
+                <p>
+                    Телефон: <br>
+                    <a href="tel:+79884013219">+7-988-401-32-19</a> <br>
+                    <a href="tel:+7918405 7844">+7-918-405-78-44</a> <br>
+                    <a class="icon" href="https://vk.com/23sectorclub"><img src="./img/vk.svg"></a>
+                    <a href="mailto:sector23@inbox.ru" class="icon"><img src="./img/mail.svg"></a>
+                    <a class="icon" href="https://www.instagram.com/sector23club/"><img src="./img/instagram.svg"></a>    
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+                <center><h2>Подробнее о ценах</h2></center>
+
+            <div id="price">
+                <img src="./img/money.svg">
+                <div>
+                    <h3>Пейнтбол</h3>
+                    <p>
+                        500 руб. - экипировка<br>
+                        2 руб. - шарик с краской
+                    </p>
+                </div>
+                <div>
+                    <h3>Лазертаг</h3>
+                    <p>
+                        400 руб. / час
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <center><span>Отзывы</span></center>
+        <div class="owl-carousel owl-theme carousel comments">
+            <div class="item">
+                <img src="./img/img1.jpg">
+                <h3>Lorem, ipsum.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
+            </div>
+            <div class="item">
+                <img src="./img/img2.jpg">
+                <h3>Lorem, ipsum.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
+            </div>
+            <div class="item">
+                <img src="./img/img3.jpg">
+                <h3>Lorem, ipsum.</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
+            </div>
+        </div>
+
+    </div>
+<!-- content-end -->
 
 
 
+    <footer>
+
+    </footer>
+    <script src="./script/owl.carousel.min.js"></script>
+    <script src="script/script.js"></script>
+    <script type="text/javascript">
+        var map;
+    
+        ymaps.ready(function(){
+            map = new ymaps.Map("map", {
+                center: [43.914688, 39.335573],
+                zoom: 17
+            });
+        });
+    </script>
+    
 </body>
 </html>

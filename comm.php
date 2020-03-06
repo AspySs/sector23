@@ -1,7 +1,7 @@
 <?php
 if(@$_GET['send']=='succes'){echo"Ваш комментарий доставлен на обработку";}
 elseif (@$_GET['send']=='fail'){@$error = $_GET['error']; echo"<strong>".$error."</strong>";}
-include_once('functions.php');
+include_once('includes/functions.php');
 ?>
 <!DOCTYPE html>
 <html>
