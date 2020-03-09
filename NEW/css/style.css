@@ -84,57 +84,6 @@ header a:hover {
     box-shadow: 0 0 8px #424242;
 }
 
-#headerMenu {
-    display: flex;
-    position: relative;
-    height: 200px;
-    flex-flow: column;
-    list-style-type: none;
-    z-index: 999999999999;
-}
-
-#headerMenu a svg {
-    display: inline-block;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: calc(50% - 8px);
-    right: 12px;
-    fill: var(--green);
-    transition: ease-in-out 0.5s;
-}
-
-#headerMenu span {
-    display: inline-block;
-    position: absolute;
-    width: calc(100% + 80px);
-    left: -24px;
-    height: calc(100% + 16px*3 + 16px);
-    top: calc( -100% - 16px*3 - 36px);
-    background-color: var(--dark);
-    z-index: -1;
-    transition: ease-in-out 0.5s;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-#headerMenu a {
-    width: 100%;
-    text-align: center;
-    position: relative;
-}
-
-#headerMenu .hidden {
-    display: none;
-    opacity: 0;
-    margin-top: 40px;
-}
-
-.first {
-    text-align: left;
-    padding: 8px 24px 8px 8px;
-}
-
 #mobileMenu {
     display: inline-block;
     position: fixed;
@@ -338,6 +287,16 @@ center span {
     width: 60%;
 }
 
+.tel {
+    display: inline-block;
+    width: 34%;
+    margin: 10px calc(33% - 16px);
+    padding: 8px 16px;
+    color: #000;
+    border: 1px solid var(--red);
+    border-radius: 16px;
+}
+
 #about .icon {
     display: inline-block;
     width: 64px;
@@ -363,7 +322,51 @@ center span {
     height: 100%;
 }
 
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 15px 5%;
+    background-color: var(--dark);
+    color: #484848;
+    font-size: 15px;
+}
+
+footer .row {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+footer span {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0;
+}
+
+footer a {
+    display: block;
+    width: 100%;
+    color: #888888;
+}
+
 @media (max-width: 768px) {
+
+    footer {
+        padding: 10px;
+    }
+
+    .tel {
+        width: 70%;
+        margin: 8px calc(15% - 16px);
+    }
+
+    #map {
+        width: 100%;
+        margin-left: 0;
+    }
 
     #about .half {
         width: 100%;
