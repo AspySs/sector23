@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+</head>
+<body>
+    <div id="comments">
+        <h2>Отзывы</h2>
+        <div class="comment active">
+            <form action="">
+                <span>
+                <img src="" alt="">
+                <div class="user">user345</div> 
+                </span>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quisquam mollitia eius autem ut corrupti dolor! Excepturi error temporibus officia neque quis modi provident. Doloremque recusandae quisquam quam quae fugit dolore dignissimos quis. Quibusdam mollitia perspiciatis quas incidunt architecto hic tempore earum necessitatibus culpa, illum dignissimos quae officia itaque ratione odit doloribus ex, saepe similique tempora temporibus! Fuga repellat fugiat voluptatibus minus officiis cupiditate corrupti nulla earum, expedita blanditiis ducimus incidunt quia, quo omnis voluptates architecto est magnam assumenda quod quae. Fugit mollitia quas reprehenderit iste? Dolore ea dolorem maxime autem, sunt fugit rerum exercitationem nihil, impedit distinctio hic nulla?</p>
+                <input class="button" type="button" value="Удалить с сайта">
+            </form>
+            </div>
+        <div class="comment">
+        <form action="">
+            <span>
+            <img src="" alt="">
+            <div class="user">user345</div> 
+            </span>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quisquam mollitia eius autem ut corrupti dolor! Excepturi error temporibus officia neque quis modi provident. Doloremque recusandae quisquam quam quae fugit dolore dignissimos quis. Quibusdam mollitia perspiciatis quas incidunt architecto hic tempore earum necessitatibus culpa, illum dignissimos quae officia itaque ratione odit doloribus ex, saepe similique tempora temporibus! Fuga repellat fugiat voluptatibus minus officiis cupiditate corrupti nulla earum, expedita blanditiis ducimus incidunt quia, quo omnis voluptates architecto est magnam assumenda quod quae. Fugit mollitia quas reprehenderit iste? Dolore ea dolorem maxime autem, sunt fugit rerum exercitationem nihil, impedit distinctio hic nulla?</p>
+            <input class="button" type="button" value="Удалить">
+            <input class="button" type="button" value="Добавить">
+        </form>
+        </div>
+        <div class="comment">
+            <form action="">
+                <span>
+                <img src="" alt="">
+                <div class="user">user345</div> 
+                </span>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum quisquam mollitia eius autem ut corrupti dolor! Excepturi error temporibus officia neque quis modi provident. Doloremque recusandae quisquam quam quae fugit dolore dignissimos quis. Quibusdam mollitia perspiciatis quas incidunt architecto hic tempore earum necessitatibus culpa, illum dignissimos quae officia itaque ratione odit doloribus ex, saepe similique tempora temporibus! Fuga repellat fugiat voluptatibus minus officiis cupiditate corrupti nulla earum, expedita blanditiis ducimus incidunt quia, quo omnis voluptates architecto est magnam assumenda quod quae. Fugit mollitia quas reprehenderit iste? Dolore ea dolorem maxime autem, sunt fugit rerum exercitationem nihil, impedit distinctio hic nulla?</p>
+                <input class="button" type="button" value="Удалить">
+                <input class="button" type="button" value="Добавить">
+            </form>
+            </div>
+    </div>
+
+
+    <div id="blog"></div>
+
+    <style>
+        #comments, #blog {
+            display: inline-block;
+            margin: 15px 30px;
+            padding: 0;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .comment {
+            display: inline-block;
+            max-width: 50%;
+            border-bottom: 1px solid rgb(212, 212, 212);
+            margin-bottom: 15px;
+            padding: 5px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .active {
+            background-color: rgb(192, 255, 190);
+        }
+
+        .comment * {
+            display: inline-block;
+        }
+
+        .comment span {
+            display: inline-block;
+            width: 100%;
+        }
+
+        img {
+            display: none;
+            width: 80px;
+            height: 80px;
+            background-color: #cacaca;
+            border-radius: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: inherit;
+            border: 1.5px solid rgb(240, 32, 95);
+            border-radius: 8px;
+            cursor: pointer;
+            line-height: 20px;
+            margin: 5px;
+            float: left;
+        }
+
+        .button+.button {
+            float: right;
+        }
+
+        .user {
+            vertical-align: top;
+            margin: 10px;
+        }
+
+
+        p {
+            display: inline-block;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            #comments {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+
+            .comment {
+                max-width: calc(100% - 10px);
+                padding: 10px 5px;
+            }
+
+        }
+
+
+    </style>
+</body>
+</html>
