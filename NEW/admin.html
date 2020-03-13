@@ -168,7 +168,7 @@
         @media (max-width: 768px) {
             #comments {
                 width: 100%;
-                margin: 10px 0;
+                margin: 100px 0 0 0;
             }
 
             .comment {
@@ -194,18 +194,22 @@
 
     <script>
         var comS = 'hide',
-        blS = 'hide';
+        blS = 'hide',
+        comBtn = document.body.querySelector('#comBtn'),
+        blBtn =  document.body.querySelector('#blBtn');
         if (screen.width <= '768') {
             $('#comBtn').click(function() {
                 if (comS == 'hide') {
                     $('#comments').css('display', 'inline-block');
                     $('#blBtn').css('display', 'none');
+                    comBtn.innerHTML = 'Назад';
                     $('#comBtn').css('position', 'fixed');
                     $('#comBtn').animate({'top': '10px'}, 'slow');
                     $('#comments').animate({'opacity': '1'}, 'slow');
                     comS = 'show';
                 } else {
                     $('#comments').css('display', 'none');
+                    comBtn.innerHTML = 'Отзывы';
                     $('#blBtn').css('display', 'inline-block');
                     $('#comBtn').css('position', 'absolute');
                     $('#comBtn').animate({'top': '160px'}, 'slow');
@@ -216,6 +220,7 @@
             $('#blBtn').click(function() {
                 if (blS == 'hide') {
                     $('#blog').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Назад';
                     $('#comBtn').css('display', 'none');
                     $('#blBtn').css('position', 'fixed');
                     $('#blBtn').animate({'top': '10px'}, 'slow');
@@ -223,6 +228,7 @@
                     blS = 'show';
                 } else {
                     $('#blog').css('display', 'none');
+                    blBtn.innerHTML = 'Блог';
                     $('#comBtn').css('display', 'inline-block');
                     $('#blBtn').css('position', 'absolute');
                     $('#blBtn').animate({'top': '240px'}, 'slow');
@@ -233,6 +239,7 @@
             $('#comBtn').click(function() {
                 if (comS == 'hide') {
                     $('#comments').css('display', 'inline-block');
+                    comBtn.innerHTML = 'Назад';
                     $('#blBtn').css('display', 'none');
                     $('#comBtn').css('position', 'fixed');
                     $('#comBtn').animate({
@@ -243,6 +250,7 @@
                     comS = 'show';
                 } else {
                     $('#blBtn').css('display', 'inline-block');
+                    comBtn.innerHTML = 'Отзывы';
                     $('#comBtn').css('position', 'absolute');
                     $('#comBtn').animate({
                         'left': '-=160px',
@@ -257,6 +265,7 @@
                 $('#blBtn').click(function() {
                 if (blS == 'hide') {
                     $('#blog').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Назад';
                     $('#comBtn').css('display', 'none');
                     $('#blBtn').css('position', 'fixed');
                     $('#blBtn').animate({
@@ -267,6 +276,7 @@
                     blS = 'show';
                 } else {
                     $('#comBtn').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Блог';
                     $('#blBtn').css('position', 'absolute');
                     $('#blBtn').animate({
                         'left': '+=160px',
