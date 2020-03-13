@@ -28,5 +28,5 @@
 	return $name;
    }
   function make_upload($file, $picname){	
-	copy($file['tmp_name'], 'img_for_comm/' . $picname);
+	copy($file['tmp_name'], 'img/comm/' . $picname);
   }

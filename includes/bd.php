@@ -1,6 +1,22 @@
 <?php
 
 
+/*$host = "localhost"; // Хост (лучше оставить таким)
+
+$BDuser = "bdus"; // Имя пользователя базы данных
+
+$BDname = "sector";	// Имя базы данных
+
+$BDpass = "bdpass";	// Пароль от пользователя базы данных (пароль от базы)
+
+
+
+$bd = new mysqli($host, $BDuser, $BDpass, $BDname);
+$bd -> query("SET NAMES 'utf8'");*/
+
+
+
+
 $host = "localhost"; // Хост (лучше оставить таким)
 
 $BDuser = "u0928589_bdus"; // Имя пользователя базы данных
@@ -13,6 +29,7 @@ $BDpass = "bdpassbdpass";	// Пароль от пользователя базы
 
 $bd = new mysqli($host, $BDuser, $BDpass, $BDname);
 $bd -> query("SET NAMES 'utf8'");
+
 
 
 ?>
