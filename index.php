@@ -220,8 +220,8 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
 
     <footer>
         <div class="row">
-        <span>Вёрстка сайта <a href="#">Максим Возбранюк</a></span>
-        <span>Админ-панель <a href="#">Александр Осипов</a></span>
+        <span>Вёрстка сайта (front-end) <a href="#">Максим Возбранюк</a></span>
+        <span>Админ-панель (back-end) <a href="#">Александр Осипов</a></span>
         </div>
         <div class="row">
         <p>
