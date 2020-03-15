@@ -65,6 +65,7 @@
                 <div class="item"><img src="./img/img1.jpg"></div>
                 <div class="item"><img src="./img/img2.jpg"></div>
                 <div class="item"><img src="./img/img3.jpg"></div>
+                <div class="item"><img src="./img/img4.jpg"></div>
             </div>
         </div>
     
