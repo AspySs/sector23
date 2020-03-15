@@ -71,11 +71,11 @@ if (isset($_SESSION["auth"])){
 		<b><p>Введите пароль:</p></b>
 		<form action="" method="post" name = "auth">
 			<input name="pass" placeholder="********" class="textbox"></br>
-			<input class="sub" type="submit" name="done" value="Войти">
+			<input class="sub" type="submit" name="done" value="Submit">
 		</form>
 	</div>
+
 	<style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic');
 
 body {
 	margin: 0;
