@@ -59,7 +59,13 @@ echo "<div class=\"comment active\">\n<form action=\"buttons/bad.php\" method=\"
 for($i=0;$i<$colvo;$i++){
     if($all[$i][4] != "true"){
 echo "<div class=\"comment\">\n
-<span>\n<img src=\"./img/comm/".$all[$i][5]."\" alt=\"\">\n<div class=\"user\">".$all[$i][1]."</div>\n </span>\n<p>".$all[$i][2]."</p>\n<form action=\"buttons/bad.php\" method=\"POST\">\n<input class=\"button\" type=\"submit\" name = \"bad\" value=\"Удалить\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n</form>\n<form action=\"buttons/accept.php\" method=\"POST\">\n<input class=\"button\" type=\"submit\" name = \"accept\" value=\"Добавить\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n</form>\n</div>";
+<span>\n<img src=\"./img/comm/".$all[$i][5]."\" alt=\"\">\n<div class=\"user\">".$all[$i][1]."</div>\n </span>\n
+<p>".$all[$i][2]."</p>\n<form action=\"buttons/bad.php\" method=\"POST\">\n
+<input class=\"button\" type=\"submit\" name = \"bad\" value=\"Удалить\">\n
+<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n
+</form>\n
+<form action=\"buttons/accept.php\" method=\"POST\">\n
+<input class=\"button\" type=\"submit\" name = \"accept\" value=\"Добавить\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n</form>\n</div>";
 }
 }
 ?>
@@ -70,7 +76,7 @@ echo "<div class=\"comment\">\n
     <style>
         body {
             position: relative;
-            background-color: rgb(250, 250, 250);
+            background-color: #272727;
         }
 
         #comments, #blog {
@@ -86,8 +92,8 @@ echo "<div class=\"comment\">\n
             width: 100px;
             text-align: center;
             padding: 16px 32px;
-            border: 1px solid #212121;
-            background-color: #fff;
+            background-color: #DBDBDB;
+            box-shadow: 2px 4px 8px 0 #171717, -2px -4px 8px 0 #525252;
             line-height: 24px;
             font-weight: 600;
             font-size: 24px;
@@ -104,8 +110,8 @@ echo "<div class=\"comment\">\n
             width: 100px;
             text-align: center;
             padding: 16px 32px;
-            border: 1px solid #212121;
-            background-color: #fff;
+            background-color: #DBDBDB;
+            box-shadow: 2px 4px 8px 0 #171717, -2px -4px 8px 0 #525252;
             line-height: 24px;
             font-weight: 600;
             font-size: 24px;
@@ -119,16 +125,17 @@ echo "<div class=\"comment\">\n
 
         form {
             display: inline-block;
-            width: 100%;
         }
 
         .comment {
             display: inline-block;
+            width: 100%;
             border-bottom: 1px solid rgb(212, 212, 212);
+            box-shadow: 2px 4px 16px 0 #171717;
             margin: 20px 0;
-            padding: 5px;
-            border-top-left-radius: 6px;
-            border-top-right-radius: 6px;
+            padding: 15px 25px;
+            background-color: #fff;
+            border-radius: 16px;
         }
 
         .active {
@@ -160,8 +167,7 @@ echo "<div class=\"comment\">\n
             border-radius: 8px;
             cursor: pointer;
             line-height: 20px;
-            margin: 5px;
-            float: left;
+            margin: 5px 25px 5px 5px;
             transition: 0.4s;
         }
 
@@ -169,9 +175,6 @@ echo "<div class=\"comment\">\n
             background-color: rgb(255, 189, 209);
         }
 
-        .button+.button {
-            float: right;
-        }
 
         .user {
             vertical-align: top;

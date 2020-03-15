@@ -79,7 +79,9 @@ if (isset($_SESSION["auth"])){
 
 body {
 	margin: 0;
-    font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #272727;
+	color: #fff;
 }
 
 
@@ -103,7 +105,7 @@ body {
 	margin-top: 20px;
 	background-color: #865FC5;
 	color: #ffffff;
-	border: 1px solid;
+	border: 1px solid #171717;
 	border-radius: 8px;
 	border-color: rgb(24, 18, 48);
 }
