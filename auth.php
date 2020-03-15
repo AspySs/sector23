@@ -6,7 +6,7 @@ $salt = "ioyypQNDZs2o5tm";
 $hash = 'ad0d74b11455bc63cdaaa7ddd88d30fd'; // root in md5 + salt!  
 $password = @$_POST["pass"];  
 
-if (($_POST != null)&&($_POST["done"] == "Submit"))
+if (($_POST != null)&&($_POST["done"] == "Войти"))
 {
 if (check_password($salt, $password, $hash))
 	{  
@@ -71,7 +71,7 @@ if (isset($_SESSION["auth"])){
 		<b><p>Введите пароль:</p></b>
 		<form action="" method="post" name = "auth">
 			<input name="pass" placeholder="********" class="textbox"></br>
-			<input class="sub" type="submit" name="done" value="Submit">
+			<input class="sub" type="submit" name="done" value="Войти">
 		</form>
 	</div>
 
