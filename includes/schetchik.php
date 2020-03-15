@@ -1,7 +1,7 @@
 <?php
 $date = time();
 $ip = getIP();
-require "includes/bd.php";
+require "bd.php";
 $bd -> query("INSERT INTO `users` (`id`, `ip`, `time`) VALUES (NULL, '".$ip."', '".time()."');");
 $ALLusers = $bd -> query("SELECT MAX(`id`) FROM `users`");
 $bd -> close();

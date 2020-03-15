@@ -13,67 +13,301 @@ $colvo = vivCOL($ALLids);
 function vivALL($result_set){
 $o = 0;
 $peopleK = array(array());
-	while(($row = $result_set->fetch_assoc()) != false){
-		$peopleK[$o][0] = $row["id"];
-		$peopleK[$o][1] = $row["nickname"];
-		$peopleK[$o][2] = $row["text"];
-		$peopleK[$o][3] = $row["time"];
-		$peopleK[$o][4] = $row["checked"];
-		$peopleK[$o][5] = $row["picname"];
-		$o +=1;		
-		
-	} 
-	unset($o);
-	return $peopleK;
+    while(($row = $result_set->fetch_assoc()) != false){
+        $peopleK[$o][0] = $row["id"];
+        $peopleK[$o][1] = $row["nickname"];
+        $peopleK[$o][2] = $row["text"];
+        $peopleK[$o][3] = $row["time"];
+        $peopleK[$o][4] = $row["checked"];
+        $peopleK[$o][5] = $row["picname"];
+        $o +=1;     
+        
+    } 
+    unset($o);
+    return $peopleK;
 }
 function vivCOL($result_set){
 
-	while(($row = $result_set->fetch_assoc()) != false){		
-	}
-		$numb = $result_set->num_rows;
-		return $numb;
+    while(($row = $result_set->fetch_assoc()) != false){        
+    }
+        $numb = $result_set->num_rows;
+        return $numb;
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <script src="script/jquery.js"></script>
 </head>
-<body background="images/bg6.png">
+<body>
+        <span id="comBtn">Отзывы</span>
+        <span id="blBtn">Блог</span>
+    <div id="comments">
+        <?php
+for($i=0;$i<$colvo;$i++){
+    if($all[$i][4] == "true" ){
+echo "<div class=\"comment active\">\n<form action=\"buttons/bad.php\" method=\"POST\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n<span>\n<img src=\"./img/comm/".$all[$i][5]."\" alt=\"\">\n<div class=\"user\">".$all[$i][1]."</div>\n</span>\n<p>".$all[$i][2]."</p>\n<input class=\"button\" type=\"submit\" name=\"bad\" value=\"Удалить с сайта\">\n</form>\n</div>";
+}
+}
+?>
 <?php
 for($i=0;$i<$colvo;$i++){
-echo"<div class=\"str\">\n<p>ID: ".$all[$i][0]."</p>\n<p>Name: ".$all[$i][1]."</p>\n<p>Text: ".$all[$i][2]."</p>\n<p>Time: ".$all[$i][3]."</p>\n<p>Status: ".$all[$i][4]."</p>\n<form action=\"buttons/accept.php\" method=\"POST\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n<input type=\"submit\" name=\"accept\" value=\"Опубликовать\">\n</form>\n<form action=\"buttons/bad.php\" method=\"POST\">\n<input type=\"submit\" name=\"bad\" value=\"Удалить\">\n</form>\n</div>";
+    if($all[$i][4] != "true"){
+echo "<div class=\"comment\">\n
+<span>\n<img src=\"./img/comm/".$all[$i][5]."\" alt=\"\">\n<div class=\"user\">".$all[$i][1]."</div>\n </span>\n<p>".$all[$i][2]."</p>\n<form action=\"buttons/bad.php\" method=\"POST\">\n<input class=\"button\" type=\"submit\" name = \"bad\" value=\"Удалить\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n</form>\n<form action=\"buttons/accept.php\" method=\"POST\">\n<input class=\"button\" type=\"submit\" name = \"accept\" value=\"Добавить\">\n<input type=\"hidden\" name=\"id\" value=\"".$all[$i][0]."\">\n</form>\n</div>";
+}
 }
 ?>
 
-<style>
-		body {
-			margin: 0;
-			background-color: #00381f;
-/*			background-image: url("https://www.transparenttextures.com/patterns/padded-light.png")*/;
-		}
-		.str {
-			width: 100%;
-			display: inline-block;
-			height: auto;
-		}
 
-		.str div, p, form {
-			display: inline-block;
-			padding: 5px 12px;
-			margin: 0 10px;
-		}
-		
-		.str p {
-			padding-left: 5px;
-			border-radius: 5px;
-			background-color: #c0c0c0;
-		}
+    <div id="blog"></div>
 
-		.user {
-			width: 200px;
-		}
-	</style>
+    <style>
+        body {
+            position: relative;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #comments, #blog {
+            display: none;
+            width: 70%;
+            margin: 150px 15% 15px 15%;
+            padding: 0;
+            opacity: 0;
+        }
+
+        #comBtn {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            padding: 16px 32px;
+            border: 1px solid #212121;
+            background-color: #fff;
+            line-height: 24px;
+            font-weight: 600;
+            font-size: 24px;
+            border-radius: 8px;
+            position: absolute;
+            left: calc(50% - 240px);
+            top: 50px;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        #blBtn {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            padding: 16px 32px;
+            border: 1px solid #212121;
+            background-color: #fff;
+            line-height: 24px;
+            font-weight: 600;
+            font-size: 24px;
+            border-radius: 8px;
+            position: absolute;
+            left: calc(50% + 80px);
+            top: 50px;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        form {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .comment {
+            display: inline-block;
+            border-bottom: 1px solid rgb(212, 212, 212);
+            margin: 20px 0;
+            padding: 5px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+
+        .active {
+            background-color: rgb(204, 253, 203);
+        }
+
+        .comment * {
+            display: inline-block;
+        }
+
+        .comment span {
+            display: inline-block;
+            width: 100%;
+        }
+
+        img {
+            display: none;
+            width: 80px;
+            height: 80px;
+            background-color: #cacaca;
+            border-radius: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: inherit;
+            border: 1.5px solid rgb(240, 32, 95);
+            border-radius: 8px;
+            cursor: pointer;
+            line-height: 20px;
+            margin: 5px;
+            float: left;
+            transition: 0.4s;
+        }
+
+        .button:hover {
+            background-color: rgb(255, 189, 209);
+        }
+
+        .button+.button {
+            float: right;
+        }
+
+        .user {
+            vertical-align: top;
+            margin: 10px;
+        }
+
+
+        p {
+            display: inline-block;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            #comments {
+                width: 100%;
+                margin: 100px 0 0 0;
+            }
+
+            .comment {
+                max-width: calc(100% - 10px);
+                padding: 10px 5px;
+            }
+
+            #comBtn {
+                top: 160px;
+                left:calc(50% - 80px);
+            }
+
+            
+            #blBtn {
+                top: 240px;
+                left:calc(50% - 80px);
+            }
+
+        }
+
+
+    </style>
+
+    <script>
+        var comS = 'hide',
+        blS = 'hide',
+        comBtn = document.body.querySelector('#comBtn'),
+        blBtn =  document.body.querySelector('#blBtn');
+        if (screen.width <= '768') {
+            $('#comBtn').click(function() {
+                if (comS == 'hide') {
+                    $('#comments').css('display', 'inline-block');
+                    $('#blBtn').css('display', 'none');
+                    comBtn.innerHTML = 'Назад';
+                    $('#comBtn').css('position', 'fixed');
+                    $('#comBtn').animate({'top': '10px'}, 'slow');
+                    $('#comments').animate({'opacity': '1'}, 'slow');
+                    comS = 'show';
+                } else {
+                    $('#comments').css('display', 'none');
+                    comBtn.innerHTML = 'Отзывы';
+                    $('#blBtn').css('display', 'inline-block');
+                    $('#comBtn').css('position', 'absolute');
+                    $('#comBtn').animate({'top': '160px'}, 'slow');
+                    comS = 'hide';
+                }
+            });
+
+            $('#blBtn').click(function() {
+                if (blS == 'hide') {
+                    $('#blog').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Назад';
+                    $('#comBtn').css('display', 'none');
+                    $('#blBtn').css('position', 'fixed');
+                    $('#blBtn').animate({'top': '10px'}, 'slow');
+                    $('#blog').animate({'opacity': '1'}, 'slow');
+                    blS = 'show';
+                } else {
+                    $('#blog').css('display', 'none');
+                    blBtn.innerHTML = 'Блог';
+                    $('#comBtn').css('display', 'inline-block');
+                    $('#blBtn').css('position', 'absolute');
+                    $('#blBtn').animate({'top': '240px'}, 'slow');
+                    blS = 'hide';
+                }
+            });
+        } else {
+            $('#comBtn').click(function() {
+                if (comS == 'hide') {
+                    $('#comments').css('display', 'inline-block');
+                    comBtn.innerHTML = 'Назад';
+                    $('#blBtn').css('display', 'none');
+                    $('#comBtn').css('position', 'fixed');
+                    $('#comBtn').animate({
+                        'left': '+=160px',
+                        'top': '10px'
+                    }, 'slow');
+                    $('#comments').animate({'opacity': '1'}, 'slow');
+                    comS = 'show';
+                } else {
+                    $('#blBtn').css('display', 'inline-block');
+                    comBtn.innerHTML = 'Отзывы';
+                    $('#comBtn').css('position', 'absolute');
+                    $('#comBtn').animate({
+                        'left': '-=160px',
+                        'top': '50px'
+                    }, 'slow');
+                    $('#comments').animate({'opacity': '0'}, 'slow');
+                    $('#blog').css('display', 'none');
+                    comS = 'hide';
+                }
+            });
+
+                $('#blBtn').click(function() {
+                if (blS == 'hide') {
+                    $('#blog').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Назад';
+                    $('#comBtn').css('display', 'none');
+                    $('#blBtn').css('position', 'fixed');
+                    $('#blBtn').animate({
+                        'left': '-=160px',
+                        'top': '10px'
+                    }, 'slow');
+                    $('#blog').animate({'opacity': '1'}, 'slow');
+                    blS = 'show';
+                } else {
+                    $('#comBtn').css('display', 'inline-block');
+                    blBtn.innerHTML = 'Блог';
+                    $('#blBtn').css('position', 'absolute');
+                    $('#blBtn').animate({
+                        'left': '+=160px',
+                        'top': '50px'
+                    }, 'slow');
+                    $('#blog').animate({'opacity': '0'}, 'slow');
+                    $('#blog').css('display', 'none');
+                    blS = 'hide';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

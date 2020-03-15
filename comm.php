@@ -11,15 +11,12 @@ include_once('includes/functions.php');
 	<title>Sector 23</title>
 </head>
 <body>
-	</form>
 	    <form action="comments.php" method="post" enctype="multipart/form-data">
       <input type="file" name="file"></br></br>
       <input type="text" placeholder="ФИО или ник" name="nickname"><br><br>
 		<textarea name="text" placeholder="Ваш отзыв" name="text"></textarea><br><br>
 		<button class="btn" type="submit" name="done">Отправить</button>
     </form>
-
-	<form action="comments.php" method="POST">
 		
 	<style>
 		form {
