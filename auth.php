@@ -33,11 +33,11 @@ function check_password($salt, $password, $hash) {
 <html>
 	
 	<head>
-	<meta charset="UTF-8">
-	<title>AUTH</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Авторизация</title>
 	</head>
 	
-	<body background="images/bg6.png">
+	<body>
 	<div id="auth-all">
 		<?php
 if (isset($_SESSION["auth"])){
@@ -68,39 +68,44 @@ if (isset($_SESSION["auth"])){
 }
 ?>
 
-		<b><p>PASSWORD:</p></b>
+		<b><p>Введите пароль:</p></b>
 		<form action="" method="post" name = "auth">
-			<input name="pass" placeholder="password" class="textbox"></br>
-			<input class="sub" type="submit" name="done" value="Submit">
+			<input name="pass" placeholder="********" class="textbox"></br>
+			<input class="sub" type="submit" name="done" value="Войти">
 		</form>
 	</div>
 	<style>
-		body {
-	background-color: #1C1C1C;
-	color: #865FC5;
-	font-family: 'Oswald', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic');
+
+body {
+	margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
 .textbox {
 	width: 200px;
-	border: 2px solid;
+	height: 30px;
+	line-height: 30px;
+	font-size: 17px;
+	padding: 0 5px;
+	border: 1px solid;
 	border-radius: 5px;
-	border-color: #030303;
-	padding: 3px;
-	background-color: #282923;
+	border-color: #6d6d6d;
+	color: rgb(124, 124, 124);
+	background-color: rgb(223, 223, 223);
 }
 
 .sub {
 	font-weight: bold;
-	width: 80px;
-	height: 30px;
+	width: 95px;
+	height: 35px;
 	margin-top: 20px;
 	background-color: #865FC5;
 	color: #ffffff;
-	border: 2px solid;
-	border-radius: 5px;
-	border-color: #08060F;
+	border: 1px solid;
+	border-radius: 8px;
+	border-color: rgb(24, 18, 48);
 }
 
 #auth {
@@ -109,9 +114,18 @@ if (isset($_SESSION["auth"])){
 
 #auth-all {
 	display: inline-block;
+	width: 500px;
 	text-align: center;
 	margin-top: 15%;
-	margin-left: calc(50% - 100px);
+	margin-left: calc(50% - 250px);
+}
+
+@media (max-width: 768px) {
+	#auth-all {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 30vh;
+	}
 }
 	</style>
 	</body>
