@@ -64,7 +64,7 @@ if (isset($_SESSION["auth"])){
     return div.parentNode.removeChild(div);
     }, 5000);
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
-	} elseif ($_SESSION["auth"] == true) header('Location: admin.php');
+	} elseif (@$_SESSION["auth"] == true) header('Location: admin.php');
 }
 ?>
 
