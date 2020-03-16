@@ -44,8 +44,10 @@ function vivCOL($result_set){
     <title>ADMIN</title>
     <script src="script/jquery.js"></script>
 </head>
-<body>
-        <span id="exit">Выйти</span>
+<body> 
+            <form action="buttons/exit.php" method="POST">
+        <input type="submit" name="exit" id="exit" value="Выйти">
+            </form>
         <span id="comBtn">Отзывы</span>
         <span id="blBtn">Блог</span>
     <div id="comments">

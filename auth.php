@@ -68,6 +68,32 @@ if (isset($_SESSION["auth"])){
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
 	} elseif ($_SESSION["auth"] == true) header('Location: admin.php');
 }
+
+if ($_GET["error"] == true)
+	{
+	echo "<script type=\"text/javascript\">
+    var div = document.createElement('div');
+    div.innerHTML = \"".$_GET["errorT"]."\";
+    div.style.cssText = \"color: #9E1313; \
+    background-color: #CE6A6A; \
+    width: 200px; \
+    height: auto; \
+    border: 2px solid #CE4646;\
+    border-radius: 8px; \
+    position: absolute; \
+    left: calc(50% - 100px); \
+    top: 60px; \
+    text-align: center; \
+    padding: 5px 16px; \
+    font-size: 24px; \
+    \";
+    document.body.appendChild(div);
+    setTimeout( function() {
+    return div.parentNode.removeChild(div);
+    }, 5000);
+</script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
+	}
+
 ini_set('display_errors','On');
 ?>
 
