@@ -14,7 +14,7 @@ if (check_password($salt, $password, $hash))
 	{  
     $_SESSION["auth"] = true;
 		header('Location: admin.php');  
-	} else{ $_SESSION["auth"] = false; header('Location: auth.php');}  
+	} else{ $_SESSION["auth"] = false; header('Location: auth.php?error=true&errorT=Wrong PASSWORD&top=60');}  
 }
 
 
@@ -42,33 +42,6 @@ function check_password($salt, $password, $hash) {
 	<body>
 	<div id="auth-all">
 		<?php
-if (isset($_SESSION["auth"])){
- if ($_SESSION["auth"] == false)
-	{
-	echo "<script type=\"text/javascript\">
-    var div = document.createElement('div');
-    div.innerHTML = \"Wrong PASSWORD\";
-    div.style.cssText = \"color: #9E1313; \
-    background-color: #CE6A6A; \
-    width: 200px; \
-    height: auto; \
-    border: 2px solid #CE4646;\
-    border-radius: 8px; \
-    position: absolute; \
-    left: calc(50% - 100px); \
-    top: 60px; \
-    text-align: center; \
-    padding: 5px 16px; \
-    font-size: 24px; \
-    \";
-    document.body.appendChild(div);
-    setTimeout( function() {
-    return div.parentNode.removeChild(div);
-    }, 5000);
-</script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
-	} elseif ($_SESSION["auth"] == true) header('Location: admin.php');
-}
-
 if ($_GET["error"] == true)
 	{
 	echo "<script type=\"text/javascript\">
@@ -81,8 +54,8 @@ if ($_GET["error"] == true)
     border: 2px solid #CE4646;\
     border-radius: 8px; \
     position: absolute; \
-    left: calc(50% - 100px); \
-    top: 60px; \
+    left: calc(50% - 120px); \
+    top: ".$_GET['top']."px; \
     text-align: center; \
     padding: 5px 16px; \
     font-size: 24px; \
@@ -92,7 +65,9 @@ if ($_GET["error"] == true)
     return div.parentNode.removeChild(div);
     }, 5000);
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
-	}
+	} elseif ($_SESSION["auth"] == true){header('Location: admin.php');}
+
+
 
 ini_set('display_errors','On');
 ?>
