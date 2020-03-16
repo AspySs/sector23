@@ -45,6 +45,7 @@ function vivCOL($result_set){
     <script src="script/jquery.js"></script>
 </head>
 <body>
+        <span id="exit">Выйти</span>
         <span id="comBtn">Отзывы</span>
         <span id="blBtn">Блог</span>
     <div id="comments">
@@ -85,6 +86,21 @@ echo "<div class=\"comment\">\n
             margin: 150px 15% 15px 15%;
             padding: 0;
             opacity: 0;
+        }
+
+        #exit {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #373737;
+            background-color: #303030;
+            box-shadow: 2px 4px 8px 0 #171717, -2px -4px 8px 0 #525252;
+            color: #c0c0c0;
+            font-weight: 600;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 35px;
         }
 
         #comBtn {
@@ -189,6 +205,11 @@ echo "<div class=\"comment\">\n
         }
 
         @media (max-width: 768px) {
+            #exit {
+                top: 20px;
+                right: 10px;
+            }
+
             #comments {
                 width: 100%;
                 margin: 100px 0 0 0;
