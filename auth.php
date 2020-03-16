@@ -43,7 +43,7 @@ function check_password($salt, $password, $hash) {
 	<div id="auth-all">
 		<?php
 if (isset($_SESSION["auth"])){
- if (@$_SESSION["auth"] == false)
+ if ($_SESSION["auth"] == false)
 	{
 	echo "<script type=\"text/javascript\">
     var div = document.createElement('div');
@@ -66,7 +66,7 @@ if (isset($_SESSION["auth"])){
     return div.parentNode.removeChild(div);
     }, 5000);
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
-	} elseif (@$_SESSION["auth"] == true) header('Location: admin.php');
+	} elseif ($_SESSION["auth"] == true) header('Location: admin.php');
 }
 ini_set('display_errors','On');
 ?>
