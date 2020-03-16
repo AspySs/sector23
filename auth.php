@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors','Off');
+error_reporting('E_ALL');
 session_set_cookie_params(21600);
 session_start();
 $baza = "L1pd7sHSW4TAbQg";
@@ -41,7 +43,7 @@ function check_password($salt, $password, $hash) {
 	<div id="auth-all">
 		<?php
 if (isset($_SESSION["auth"])){
- if ($_SESSION["auth"] == false)
+ if (@$_SESSION["auth"] == false)
 	{
 	echo "<script type=\"text/javascript\">
     var div = document.createElement('div');
@@ -66,6 +68,7 @@ if (isset($_SESSION["auth"])){
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
 	} elseif (@$_SESSION["auth"] == true) header('Location: admin.php');
 }
+ini_set('display_errors','On');
 ?>
 
 		<b><p>Введите пароль:</p></b>
