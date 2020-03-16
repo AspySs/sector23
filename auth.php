@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors','Off');
+error_reporting('E_ALL');
 session_set_cookie_params(21600);
 session_start();
 $baza = "L1pd7sHSW4TAbQg";
@@ -66,6 +68,7 @@ if (isset($_SESSION["auth"])){
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
 	} elseif ($_SESSION["auth"] == true) header('Location: admin.php');
 }
+ini_set('display_errors','On');
 ?>
 
 		<b><p>Введите пароль:</p></b>
