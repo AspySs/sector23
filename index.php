@@ -215,6 +215,19 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
         </div>
 
     </div>
+<form id="comment">
+        <center><h2>Оставить отзыв</h2></center>
+
+        <img src="" alt=""> <br>
+        <input id="choose" type="button" value="Выбрать фото" > <br>
+        <textarea name="name" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Имя"></textarea> <br>
+        <textarea name="surname" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Фамилия"></textarea> <br>
+
+
+
+        <textarea name="comText" id="" cols="40" rows="10" autofocus maxlength="500" placeholder="Текст отзыва"></textarea> <br>
+        <input id="submit" type="button" value="Отправить отзыв">
+    </form>
 <!-- content-end -->
 
 
@@ -232,6 +245,7 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
             +7-918-405-78-44</span>
         </p>
         </div>
+
     </footer>
     <script src="./script/owl.carousel.min.js"></script>
     <script src="script/script.js"></script>

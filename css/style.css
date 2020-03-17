@@ -355,6 +355,61 @@ footer a {
     color: #888888;
 }
 
+#comment {
+    display: inline-block;
+    width: 400px;
+    padding: 0 40px;
+    border: 1px dotted #212121;
+    position: relative;
+}
+
+#comment span {
+    display: inline-block;
+    max-width: 49%;
+    height: 80px;
+    vertical-align: top;
+}
+
+#comment img {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background-color: #7777;
+}
+
+#choose {
+    margin: 5px 0 15px 0;
+}
+
+#comment textarea {
+    resize: none;
+    padding: 3px;
+    margin: 5px 0;
+}
+
+#comment input {
+    cursor: pointer;
+}
+
+#submit {
+    display: inline-block;
+    width: 250px;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 8px 16px;
+    margin: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(248, 29, 40);
+    border: 2px solid rgb(201, 17, 17);
+    color: #fff;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
 @media (max-width: 768px) {
 
     body {

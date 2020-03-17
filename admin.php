@@ -80,7 +80,9 @@ echo "<div class=\"comment\">\n
             background-color: #272727;
         }
 
+
         #comments, #blog {
+            z-index: 9999;
             display: none;
             width: 70%;
             margin: 150px 15% 15px 15%;
