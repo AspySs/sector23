@@ -280,8 +280,8 @@ center span {
 
 .comments .item h3 {
     display: inline-block;
-    width: calc(100% - 280px);
-    text-align: center;
+    margin-left: 40px;
+    width: calc(100% - 320px);
 }
 
 .comments .item p {
@@ -359,8 +359,10 @@ footer a {
     display: inline-block;
     width: 400px;
     padding: 0 40px;
-    border: 1px dotted #212121;
+    margin: 20px 0;
     position: relative;
+    top: 20%;
+    left: calc(50% - 200px);
 }
 
 #comment span {
@@ -394,7 +396,7 @@ footer a {
     cursor: pointer;
 }
 
-#submit {
+#comSubmit {
     display: inline-block;
     width: 250px;
     line-height: 30px;
@@ -411,6 +413,17 @@ footer a {
 }
 
 @media (max-width: 768px) {
+
+    #comment {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    #comSubmit {
+        margin-left: calc(50% - 125px);
+    }
 
     body {
         background-color: #fff;

@@ -213,21 +213,22 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
             </div> -->
         </div>
-
-    </div>
-<form id="comment">
+        <br>
         <center><h2>Оставить отзыв</h2></center>
 
-        <img src="" alt=""> <br>
-        <input id="choose" type="button" value="Выбрать фото" > <br>
+        <form id="comment">
         <textarea name="name" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Имя"></textarea> <br>
         <textarea name="surname" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Фамилия"></textarea> <br>
-
+        <img src="" alt=""> <br>
+        <input id="choose" type="button" value="Выбрать фото" > <br>
+        
 
 
         <textarea name="comText" id="" cols="40" rows="10" autofocus maxlength="500" placeholder="Текст отзыва"></textarea> <br>
-        <input id="submit" type="button" value="Отправить отзыв">
+        <input id="comSubmit" type="button" value="Отправить отзыв">
     </form>
+
+    </div>
 <!-- content-end -->
 
 
