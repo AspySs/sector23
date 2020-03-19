@@ -79,7 +79,22 @@ ini_set('display_errors','On');
 		</form>
 	</div>
 
+	<a href="http://sector.sphinxs.ru" id="backToMain">Вернуться на сайт</a>
+
 	<style>
+
+	#backToMain {
+		display:inline-block;
+		position: absolute;
+		top: 30px;
+		right: 15px;
+		background-color: #303030;
+		box-shadow: 2px 4px 8px 0 #212121, -2px -4px 8px 0 #424242;
+		padding: 8px 16px;
+		border-radius: 8px;
+		text-decoration: none;
+		color: #fff;
+	}
 
 body {
 	margin: 0;

@@ -94,7 +94,9 @@ header a:hover {
     background-color: var(--dark);
     transition: ease-out 0.8s;
     z-index: 99999999999;
+    border-bottom-right-radius: 8px;
 }
+
 
 #mobileMenu a {
     display: inline-block;
@@ -104,11 +106,11 @@ header a:hover {
     border-top: 1px solid #424242;
     text-decoration: none;
     color: #fff;
-    background: linear-gradient( #212121, #191919, #212121);
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1px;
 }
+
 
 #mobileMenuBtn {
     display: none;
@@ -116,7 +118,7 @@ header a:hover {
     cursor: pointer;
     left: 15px;
     top: calc(50% - 20px);
-    width: 40px;
+    width: 42px;
     height: 40px;
     background-color: rgb(36, 99, 36);
     border-radius: 12px;
@@ -295,8 +297,10 @@ center span {
     width: 34%;
     margin: 10px calc(33% - 16px);
     padding: 8px 16px;
-    color: #000;
-    border: 1px solid var(--red);
+    color: var(--red);
+    border: 1px solid var(--green);
+    text-decoration: none;
+    font-size: 18px;
     border-radius: 16px;
 }
 
@@ -418,6 +422,11 @@ footer a {
 
     footer {
         padding: 10px;
+        font-size: 12px;
+    }
+
+    footer p {
+        text-align: center;
     }
 
     .tel {

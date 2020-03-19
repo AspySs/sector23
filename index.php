@@ -39,7 +39,7 @@
     <span class="topBtn"><img src="./img/top.svg"></span>
     <header>
         <img src="./img/logo.svg" id="logo">
-        <div id="mobileHeaderName">Sector</div>
+        <div id="mobileHeaderName">Sector 23</div>
         <a href="#">Блог</a>
         <a href="#">Цены</a>
         <a href="#">О нас</a>
@@ -222,7 +222,8 @@ include_once('includes/functions.php');
 ?>
     <form id="comment" action="comments.php" method="post" enctype="multipart/form-data">
         <textarea id="" cols="25" rows="1" autofocus maxlength="60" type="text" placeholder="ФИО или ник" name="nickname"></textarea> <br>
-        <input type="file" id="files" name="files" value="Выбрать фото" />
+        <img src="" alt=""> <br>
+        <input type="file" id="files" name="files" value="Выбрать фото" /> <br>
         <output id="list"></output>
         <textarea name="text" id="" cols="40" rows="10" autofocus maxlength="500" placeholder="Текст отзыва"></textarea> <br>
         <input id="comSubmit" type="submit" name="done" value="Отправить отзыв">
@@ -268,13 +269,14 @@ document.getElementById('files').addEventListener('change', handleFileSelect, fa
 
     <footer>
         <div class="row">
+        <p>
         <span>Дизайн и вёрстка сайта <a href="https://vk.com/maks_v0">Максим Возбранюк</a></span>
         <span>Админ-панель (back-end) <a href="https://vk.com/aspys">Александр Осипов</a></span>
+        </p>
         </div>
         <div class="row">
         <p>
             <span>Sector23</span>
-            <span>г.Сочи п.Лазаревское ул.Пугачёва, 15</span>
             <span>+7-988-401-32-19 <br>
             +7-918-405-78-44</span>
         </p>
