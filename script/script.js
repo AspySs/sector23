@@ -92,11 +92,14 @@ $('.comments').owlCarousel({
 $(".topBtn").hide();
 
 		$(window).scroll(function (){
+
 			if ($(this).scrollTop() > 700){
 				$(".topBtn").fadeIn();
-            }  else {
-				$(".topBtn").fadeOut();
+            }  else  {
+            	$(".topBtn").fadeOut();
             }
+
+            
 		});
 
 $('.topBtn').click(function() {

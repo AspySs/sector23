@@ -26,7 +26,7 @@ body {
     bottom: 50px;
     width: 40px;
     cursor: pointer;
-    z-index: 99999999999999999999999999;
+    z-index: 999999999999999999999999;
 }
 
 .topBtn img {
@@ -458,10 +458,10 @@ footer a {
     
     .comments .item h3 {
         display: inline-block;
-        width: calc(100% - 175px);
+        width: 150px;
         text-align: right;
         margin-bottom: 40px;
-        margin-right: 15px;
+        margin-right: 40px;
         margin-top: 30px;
     }
 
@@ -483,8 +483,8 @@ footer a {
     .topBtn {
         width: 50px;
         height: 50px;
-        right: 30px;
-        bottom: 30px;
+        right: 15px;
+        bottom: 60px;
     }
 
     article {
