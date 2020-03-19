@@ -44,7 +44,14 @@ function vivCOL($result_set){
     <title>ADMIN</title>
     <script src="script/jquery.js"></script>
 </head>
-<body> 
+<body>
+
+    <ul id="stat">
+        <li>Сейчас онлайн: </li>
+        <li>Посещений сегодня: </li>
+        <li>Всего посещений: </li>
+    </ul>
+
             <form action="buttons/exit.php" method="POST">
         <input type="submit" name="exit" id="exit" value="Выйти">
             </form>
@@ -82,6 +89,29 @@ echo "<div class=\"comment\">\n
             background-color: #272727;
         }
 
+        ul {
+            display: inline-block;
+            width: 500px;
+            margin-left: calc(50% - 250px);
+            margin-top: 20vh;
+            padding: 0;
+            color: #c0c0c0;
+            border-left: 1px solid #151515;
+            border-right: 1px solid #151515;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            border-top: 1px solid #151515;
+        }
+
+        ul li:last-child {
+            border-bottom: 1px solid #151515;
+        }
 
         #comments, #blog {
             z-index: 9999;
@@ -209,6 +239,13 @@ echo "<div class=\"comment\">\n
         }
 
         @media (max-width: 768px) {
+
+            ul{
+                width: 100%;
+                margin-left: 0;
+                margin-top: 50vh;
+            }
+
             #exit {
                 top: 20px;
                 right: 10px;
@@ -244,10 +281,12 @@ echo "<div class=\"comment\">\n
         var comS = 'hide',
         blS = 'hide',
         comBtn = document.body.querySelector('#comBtn'),
-        blBtn =  document.body.querySelector('#blBtn');
+        blBtn =  document.body.querySelector('#blBtn'),
+        stat = document.body.querySelector('#stat');
         if (screen.width <= '768') {
             $('#comBtn').click(function() {
                 if (comS == 'hide') {
+                    stat.style.display = 'none';
                     $('#comments').css('display', 'inline-block');
                     $('#blBtn').css('display', 'none');
                     comBtn.innerHTML = 'Назад';
@@ -256,6 +295,7 @@ echo "<div class=\"comment\">\n
                     $('#comments').animate({'opacity': '1'}, 'slow');
                     comS = 'show';
                 } else {
+                    stat.style.display = 'inline-block';
                     $('#comments').css('display', 'none');
                     comBtn.innerHTML = 'Отзывы';
                     $('#blBtn').css('display', 'inline-block');
@@ -267,6 +307,7 @@ echo "<div class=\"comment\">\n
 
             $('#blBtn').click(function() {
                 if (blS == 'hide') {
+                    stat.style.display = 'none';
                     $('#blog').css('display', 'inline-block');
                     blBtn.innerHTML = 'Назад';
                     $('#comBtn').css('display', 'none');
@@ -275,6 +316,7 @@ echo "<div class=\"comment\">\n
                     $('#blog').animate({'opacity': '1'}, 'slow');
                     blS = 'show';
                 } else {
+                    stat.style.display = 'inline-block';
                     $('#blog').css('display', 'none');
                     blBtn.innerHTML = 'Блог';
                     $('#comBtn').css('display', 'inline-block');
@@ -286,6 +328,7 @@ echo "<div class=\"comment\">\n
         } else {
             $('#comBtn').click(function() {
                 if (comS == 'hide') {
+                    stat.style.display = 'none';
                     $('#comments').css('display', 'inline-block');
                     comBtn.innerHTML = 'Назад';
                     $('#blBtn').css('display', 'none');
@@ -297,6 +340,7 @@ echo "<div class=\"comment\">\n
                     $('#comments').animate({'opacity': '1'}, 'slow');
                     comS = 'show';
                 } else {
+                    stat.style.display = 'inline-block';
                     $('#blBtn').css('display', 'inline-block');
                     comBtn.innerHTML = 'Отзывы';
                     $('#comBtn').css('position', 'absolute');
@@ -312,6 +356,7 @@ echo "<div class=\"comment\">\n
 
                 $('#blBtn').click(function() {
                 if (blS == 'hide') {
+                    stat.style.display = 'none';
                     $('#blog').css('display', 'inline-block');
                     blBtn.innerHTML = 'Назад';
                     $('#comBtn').css('display', 'none');
@@ -323,6 +368,7 @@ echo "<div class=\"comment\">\n
                     $('#blog').animate({'opacity': '1'}, 'slow');
                     blS = 'show';
                 } else {
+                    stat.style.display = 'inline-block';
                     $('#comBtn').css('display', 'inline-block');
                     blBtn.innerHTML = 'Блог';
                     $('#blBtn').css('position', 'absolute');

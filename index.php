@@ -214,9 +214,9 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
             </div> -->
         </div>
         <br>
-        <center><h2>Оставить отзыв</h2></center>
 
         <form id="comment">
+        <center><h2>Оставить отзыв</h2></center>
         <textarea name="name" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Имя"></textarea> <br>
         <textarea name="surname" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Фамилия"></textarea> <br>
         <img src="" alt=""> <br>

@@ -357,20 +357,14 @@ footer a {
 
 #comment {
     display: inline-block;
-    width: 400px;
-    padding: 0 40px;
+    width: 100%;
     margin: 20px 0;
+    padding: 15px 0;
+    border-top: 1px solid #bebebe;
     position: relative;
-    top: 20%;
-    left: calc(50% - 200px);
+    text-align: center;
 }
 
-#comment span {
-    display: inline-block;
-    max-width: 49%;
-    height: 80px;
-    vertical-align: top;
-}
 
 #comment img {
     display: inline-block;
@@ -379,8 +373,10 @@ footer a {
     height: 70px;
     margin: 5px 0;
     border-radius: 8px;
-    background-color: #7777;
+    background-color: #fff;
+    border: 1px solid #787878;
 }
+
 
 #choose {
     margin: 5px 0 15px 0;
@@ -402,28 +398,16 @@ footer a {
     line-height: 30px;
     font-size: 20px;
     padding: 8px 16px;
-    margin: 10px 15px;
+    margin-top: 10px;
     border-radius: 8px;
     border: none;
     background-color: rgb(248, 29, 40);
     border: 2px solid rgb(201, 17, 17);
     color: #fff;
     font-weight: 600;
-    margin-left: 30px;
 }
 
 @media (max-width: 768px) {
-
-    #comment {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-
-    #comSubmit {
-        margin-left: calc(50% - 125px);
-    }
 
     body {
         background-color: #fff;
