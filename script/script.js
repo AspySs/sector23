@@ -94,9 +94,9 @@ $(".topBtn").hide();
 		$(window).scroll(function (){
 			if ($(this).scrollTop() > 700){
 				$(".topBtn").fadeIn();
-			} else{
+            }  else {
 				$(".topBtn").fadeOut();
-			}
+            }
 		});
 
 $('.topBtn').click(function() {
