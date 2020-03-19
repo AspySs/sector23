@@ -214,23 +214,19 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
             </div> -->
         </div>
         <br>
-        <form id="comment">
-        <center><h2>Оставить отзыв</h2></center>
-        <textarea name="name" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Имя"></textarea> <br>
-        <textarea name="surname" id="" cols="25" rows="1" autofocus maxlength="30" placeholder="Фамилия"></textarea> <br>
-        <img src="" alt=""> <br>
-        <input id="file" type="button" value="Выбрать фото" > <br>
-
         <center><h2>Оставить отзыв</h2></center>
         <?php
 if(@$_GET['send']=='succes'){echo"Ваш комментарий доставлен на обработку";}
 elseif (@$_GET['send']=='fail'){@$error = $_GET['error']; echo"<strong>".$error."</strong>";}
 include_once('includes/functions.php');
 ?>
-        <form id="comment" action="comments.php" method="post" enctype="multipart/form-data">
+    <form id="comment" action="comments.php" method="post" enctype="multipart/form-data">
         <textarea id="" cols="25" rows="1" autofocus maxlength="60" type="text" placeholder="ФИО или ник" name="nickname"></textarea> <br>
-<input type="file" id="files" name="files" value="Выбрать фото" />
-<output id="list"></output>
+        <input type="file" id="files" name="files" value="Выбрать фото" />
+        <output id="list"></output>
+        <textarea name="text" id="" cols="40" rows="10" autofocus maxlength="500" placeholder="Текст отзыва"></textarea> <br>
+        <input id="comSubmit" type="submit" name="done" value="Отправить отзыв">
+    </form>
 
 <script type="text/javascript">
 function handleFileSelect(evt) {
@@ -264,9 +260,6 @@ function handleFileSelect(evt) {
 
 document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>
-        <textarea name="text" id="" cols="40" rows="10" autofocus maxlength="500" placeholder="Текст отзыва"></textarea> <br>
-        <input id="comSubmit" type="submit" name="done" value="Отправить отзыв">
-    </form>
 
     </div>
 <!-- content-end -->
