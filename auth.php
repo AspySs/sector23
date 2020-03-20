@@ -13,8 +13,8 @@ if (($_POST != null)&&($_POST["done"] == "Войти"))
 if (check_password($salt, $password, $hash))
 	{  
     $_SESSION["auth"] = true;
-		header('Location: admin.php');  
-	} else{ $_SESSION["auth"] = false; header('Location: auth.php?error=true&errorT=Wrong PASSWORD&top=60');}  
+		header('Location: admin');  
+	} else{ $_SESSION["auth"] = false; header('Location: auth?error=true&errorT=Wrong PASSWORD&top=60');}  
 }
 
 
@@ -65,7 +65,7 @@ if ($_GET["error"] == true)
     return div.parentNode.removeChild(div);
     }, 5000);
 </script>"; //отредактируй как-нибудь чтобы красиво было мб? // И ТАК ЗАЕБАТО
-	} elseif ($_SESSION["auth"] == true){header('Location: admin.php');}
+	} elseif ($_SESSION["auth"] == true){header('Location: admin');}
 
 
 

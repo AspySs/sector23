@@ -17,10 +17,10 @@ if(isset($_POST['done'])){
 	include 'includes/bd.php';
 	$send = $bd->query("INSERT INTO `comments` (`id`, `nickname`, `text`, `time`, `ip`, `checked`, `picname`) VALUES (NULL, '".$nickname."', '".$text."', '".time()."', '".$ip."', '".$status."', '".$picname."');");
 	$bd->close();
- if($send){header('Location: index.php?send=succes');}else{$error= "вы уже оставляли комментарий, либо текст похож на чужой, попробуйте изменить содержание!"; header('Location: index.php?send=fail&error='.$error);}
-		}else{$error = "Ошибка " . $check; header('Location: index.php?send=fail&error='.$error);}
-	}else{$error = "пожалуйста загрузите фотографию перед отправкой"; header('Location: index.php?send=fail&error='.$error);}
-}else{$error = "Ошибка? " . $check; header('Location: index.php?send=fail&error='.$error);}
+ if($send){header('Location: index?send=succes');}else{$error= "вы уже оставляли комментарий, либо текст похож на чужой, попробуйте изменить содержание!"; header('Location: index?send=fail&error='.$error);}
+		}else{$error = "Ошибка " . $check; header('Location: index?send=fail&error='.$error);}
+	}else{$error = "пожалуйста загрузите фотографию перед отправкой"; header('Location: index?send=fail&error='.$error);}
+}else{$error = "Ошибка? " . $check; header('Location: index?send=fail&error='.$error);}
 
 
 

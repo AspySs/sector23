@@ -4,7 +4,7 @@ session_start();
 if(isset($_POST["exit"]) && $_SESSION['auth']=="true"){
 	session_unset();
 	session_destroy();
-	header('Location: ../auth.php');
-}else{header('Location: ../auth.php?error=true&errorT=Технические шоколадки, попробуйте авторизоваться снова!&top=60');}
+	header('Location: ../auth');
+}else{header('Location: ../auth?error=true&errorT=Технические шоколадки, попробуйте авторизоваться снова!&top=60');}
 
 ?>

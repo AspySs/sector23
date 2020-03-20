@@ -5,7 +5,7 @@ if($_SESSION['auth']=="true"){
 include 'includes/bd.php';
 $ALL = $bd -> query("SELECT * FROM `comments`");
 $ALLids = $bd -> query("SELECT `id` FROM `comments`");
-$ALLusers = $bd -> query("SELECT MAX(`id`) FROM `users`");
+$ALLusers = $bd -> query("SELECT * FROM `users`");
 $ALLtimes = $bd -> query("SELECT `time` FROM `users`");
 $bd->close();
 $COLVO = vivCOL1($ALLusers);
@@ -13,7 +13,7 @@ $all = vivALL($ALL);
 $colvo = vivCOL($ALLids);
 $times = vivALLtimes($ALLtimes);
 $time = time();
-}else{header("Location: auth.php");}
+}else{header("Location: auth");}
 
 function vivALL($result_set){
 $o = 0;
@@ -53,10 +53,8 @@ function vivCOL($result_set){
 function vivCOL1($result_set){
 
     while(($row = $result_set->fetch_assoc()) != false){
-
-        //echo $row["login"];
-        //echo "<br />";
-        return $row["MAX(`id`)"];
+        $numb = $result_set->num_rows;
+        return $numb;
         
     }
 }
