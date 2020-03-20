@@ -1,30 +1,71 @@
+
+        if (window.screen.width <= 768) {
+            $('#topAn').animate({
+                'left': '0'
+            }, {
+                duration: 1500,
+                complete: function() {
+                    $('#topAn').animate({
+                        'width': '80%',
+                        'height': '150px',
+                        'background': '#fff',
+                        'border': '1px solid #212121',
+                        'color': '#fff',
+                        'padding': '5px 15px'
+                    }, 1000);
+    
+                    var text = setTimeout(()=>{
+                        document.body.querySelector("#topAn").innerHTML = "<h1>Sector 23 <h1><h3>Зона активного отдыха<h3>";
+                    }, 1000);
+            }
+        });  }
+            else {
+            $('#topAn').animate({
+                'left': '20px'
+            }, {
+                duration: 1500,
+                complete: function() {
+                    $('#topAn').animate({
+                        'width': '400px',
+                        'height': '110px',
+                        'background': '#fff',
+                        'border': '2px solid #212121',
+                        'color': '#fff',
+                        'padding': '5px 15px'
+                    }, 1000);
+    
+                    var text = setTimeout(()=>{
+                        document.body.querySelector("#topAn").innerHTML = "<h1>Sector 23 <h1><h3>Зона активного отдыха<h3>";
+                    }, 1000);
+            }
+        }); }
+    
+        
+    
+    
     var menu = $('#mobileMenu'),
     menuStatus = 'hide';
 
-    $('#mobileMenuBtn span:nth-child(1)').css('transform', 'translateY(-10px)');
-    $('#mobileMenuBtn span:nth-child(3)').css('transform', 'translateY(10px)');
+    $('#mobileMenuBtn span:nth-child(1)').css('transform', 'translateY(-8px)');
+    $('#mobileMenuBtn span:nth-child(3)').css('transform', 'translateY(8px)');
 
     function mobileMenu() {
         if (menuStatus == 'hide') {
             menu.css('left', '0');
-            $('#mobileMenuBtn span:nth-child(1)').css({'transform': 'rotate(-45deg)',
-            });
-            $('#mobileMenuBtn span:nth-child(2)').css('transform', 'rotate(45deg)');
-            $('#mobileMenuBtn span:nth-child(3)').css({'transform': 'translateY(16px)',
-            'width': '20%', 'left': '40%'});
+            $('#mobileMenuBtn span:nth-child(3)').css({'width': '50%'});
             menuStatus = 'show';
         }
         
         else {
             menu.css('left', '-200px');
-            $('#mobileMenuBtn span:nth-child(1)').css({'transform': 'rotate(0)',
-            'transform': 'translateY(-10px)'});
-            $('#mobileMenuBtn span:nth-child(2)').css({'transform': 'rotate(0)', });
-            $('#mobileMenuBtn span:nth-child(3)').css({'transform': 'translateY(10px)',
-            'width': '60%', 'left': '20%'});
+            $('#mobileMenuBtn span:nth-child(3)').css({'width': '35%'});
             menuStatus = 'hide';
         }
     }
+
+    $('#mobileMenuBtn').click( function() {
+        mobileMenu();
+    });
 
 $('.content').click( function() {
     if (menuStatus == 'show') {
@@ -32,9 +73,6 @@ $('.content').click( function() {
     }
 });
     
-    $('#mobileMenuBtn').click( function() {
-        mobileMenu();
-    });
 
 
 $('.gallery').owlCarousel({

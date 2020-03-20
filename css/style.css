@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic');
 
 :root {
     --dark-green: #0D730D;
@@ -15,8 +15,23 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: rgb(242, 246, 255);
+}
+
+
+
+#topAn {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    left: 100%;
+    border: 2px solid #212121;
+    font-size: 24px;
+}
+
+#topAn h1, #topAn h3 {
+    margin: 5px 0;
 }
 
 .topBtn {
@@ -94,7 +109,7 @@ header a:hover {
     background-color: var(--dark);
     transition: ease-out 0.8s;
     z-index: 99999999999;
-    border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 12px;
 }
 
 
@@ -120,21 +135,25 @@ header a:hover {
     top: calc(50% - 20px);
     width: 42px;
     height: 40px;
-    background-color: rgb(36, 99, 36);
+    background-color: #5555;
     border-radius: 12px;
-    box-shadow: 2px 2px 7px #171717;
 }
 
+    
 #mobileMenuBtn span {
     display: inline-block;
     position: absolute;
-    width: 60%;
+    width: 50%;
     height: 2px;
-    left: 20%;
+    left: 25%;
     top: calc(50% - 2px);
     background-color: #fff;
     border-radius: 2px;
     transition: ease-in-out 0.5s;
+}
+
+#mobileMenuBtn span:last-child {
+    width: 35%;
 }
 
 .content {
@@ -209,9 +228,9 @@ article+article+article {
 }
 
 article img {
-    width: 20%;
+    width: 16%;
     position: relative;
-    margin: 10px calc(10% - 5px) 0 5px;
+    margin: 10px calc(10% - 5px) 0 10px;
 }
 
 article h4 {
@@ -516,10 +535,10 @@ footer a {
     }
 
     article img {
-        width: 30%;
+        width: 24%;
         position: relative;
-        left: 35%;
-        margin: 20px 0 10px 0;
+        left: 38%;
+        margin: 10px 0;
     }
 
     h4::before {
@@ -535,10 +554,6 @@ footer a {
         top: calc(100% + 5px);
         left: 10%;
         background-color: var(--red);
-        animation: 3s ease-in-out article infinite;
-        -webkit-animation: 3s ease-in-out article infinite;
-        -o-animation: 3s ease-in-out article infinite;
-        -moz-animation: 3s ease-in-out article infinite;
     }
 
     article:nth-child(even) h4 span::before {
@@ -614,62 +629,5 @@ footer a {
     #price img {
         max-width: 40%;
         margin-left: 30%;
-    }
-}
-
-
-@keyframes article {
-    from {
-        top: calc(100% + 5px);
-    }
-
-    50% {
-        top: calc(100% + 10px);
-    }
-
-    to {
-        top: calc(100% + 5px);
-    }
-}
-
-@-webkit-keyframes article {
-    from {
-        top: calc(100% + 5px);
-    }
-
-    50% {
-        top: calc(100% + 10px);
-    }
-
-    to {
-        top: calc(100% + 5px);
-    }
-}
-
-@-moz-keyframes article {
-    from {
-        top: calc(100% + 5px);
-    }
-
-    50% {
-        top: calc(100% + 10px);
-    }
-
-    to {
-        top: calc(100% + 5px);
-    }
-}
-
-@-o-keyframes article {
-    from {
-        top: calc(100% + 5px);
-    }
-
-    50% {
-        top: calc(100% + 10px);
-    }
-
-    to {
-        top: calc(100% + 5px);
     }
 }

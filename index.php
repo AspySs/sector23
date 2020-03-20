@@ -58,9 +58,8 @@
 
     <div class="content">
         <div class="row">
-            <h1>Сектор 23</h1>
-            <h2>Зона активного отдыха</h2>
-    
+        <div id="topAn">
+        </div>
             <div class="owl-carousel owl-theme carousel gallery">
                 <div class="item"><img src="./img/img1.jpg"></div>
                 <div class="item"><img src="./img/img2.jpg"></div>
