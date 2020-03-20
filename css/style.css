@@ -535,6 +535,10 @@ footer a {
         top: calc(100% + 5px);
         left: 10%;
         background-color: var(--red);
+        animation: 3s ease-in-out article infinite;
+        -webkit-animation: 3s ease-in-out article infinite;
+        -o-animation: 3s ease-in-out article infinite;
+        -moz-animation: 3s ease-in-out article infinite;
     }
 
     article:nth-child(even) h4 span::before {
@@ -610,5 +614,62 @@ footer a {
     #price img {
         max-width: 40%;
         margin-left: 30%;
+    }
+}
+
+
+@keyframes article {
+    from {
+        top: calc(100% + 5px);
+    }
+
+    50% {
+        top: calc(100% + 10px);
+    }
+
+    to {
+        top: calc(100% + 5px);
+    }
+}
+
+@-webkit-keyframes article {
+    from {
+        top: calc(100% + 5px);
+    }
+
+    50% {
+        top: calc(100% + 10px);
+    }
+
+    to {
+        top: calc(100% + 5px);
+    }
+}
+
+@-moz-keyframes article {
+    from {
+        top: calc(100% + 5px);
+    }
+
+    50% {
+        top: calc(100% + 10px);
+    }
+
+    to {
+        top: calc(100% + 5px);
+    }
+}
+
+@-o-keyframes article {
+    from {
+        top: calc(100% + 5px);
+    }
+
+    50% {
+        top: calc(100% + 10px);
+    }
+
+    to {
+        top: calc(100% + 5px);
     }
 }
