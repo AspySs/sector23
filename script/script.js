@@ -1,4 +1,5 @@
 
+window.onload = function() {
         if (window.screen.width <= 768) {
             $('#topAn').animate({
                 'left': '0'
@@ -39,9 +40,18 @@
                     }, 1000);
             }
         }); }
-    
+    }
         
-    
+    $(window).scroll(function (){
+
+        if ($(this).scrollTop() > 200){
+            $("#mobileHeaderName").fadeIn();
+        }  else  {
+            $("#mobileHeaderName").fadeOut();
+        }
+
+        
+    });
     
     var menu = $('#mobileMenu'),
     menuStatus = 'hide';

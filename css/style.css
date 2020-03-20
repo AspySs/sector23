@@ -25,7 +25,7 @@ body {
     display: inline-block;
     position: relative;
     width: 40px;
-    left: 100%;
+    left: 120%;
     border: 2px solid #212121;
     font-size: 24px;
 }
@@ -603,10 +603,6 @@ footer a {
 
     #mobileMenu {
         display: inline-block;
-    }
-
-    #mobileHeaderName {
-    display: inline-block;
     }
 
     #price {
