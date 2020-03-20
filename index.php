@@ -156,7 +156,12 @@
         <div class="owl-carousel owl-theme carousel comments">
 
                     <?php
+$date = time();
+$ip = getIP();
+$ipp = str_replace(".", "", $ip);
 include 'includes/bd.php';
+$new = $bd -> query("INSERT INTO `users` (`id`, `ip`, `time`, `ipp`) VALUES (NULL, '".$ip."', '".time()."', '".$ipp."');");;
+if($new==false){$bd -> query("UPDATE `users` SET `time` = '".time()."' WHERE `users`.`ipp` = ".$ipp.";");}
 $ALL = $bd -> query("SELECT * FROM `comments`");
 $ALLids = $bd -> query("SELECT `id` FROM `comments`");
 $bd->close();
@@ -195,23 +200,20 @@ for($i=0;$i<$colvo;$i++){if($all[$i][4]=='true')
                     </div>
                     ";
 }
+
+function getIP()
+{
+    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+    $remote  = @$_SERVER['REMOTE_ADDR'];
+ 
+    if(filter_var($client, FILTER_VALIDATE_IP)) $ip = $client;
+    elseif(filter_var($forward, FILTER_VALIDATE_IP)) $ip = $forward;
+    else $ip = $remote;
+ 
+        return $ip;
+}
                     ?>
-<!-- 
-            <div class="item">
-                <img src="./img/img1.jpg">
-                <h3>Lorem, ipsum.</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
-            </div>
-            <div class="item">
-                <img src="./img/img2.jpg">
-                <h3>Lorem, ipsum.</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
-            </div>
-            <div class="item">
-                <img src="./img/img3.jpg">
-                <h3>Lorem, ipsum.</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat facilis tenetur aperiam illum pariatur a accusamus ad obcaecati commodi? Eos, labore porro eligendi culpa error non temporibus dolores cumque natus at ipsam cum voluptatem eius voluptatum! Perspiciatis officiis minima adipisci, deleniti numquam iste delectus voluptate culpa mollitia dolor hic illum.</p>
-            </div> -->
         </div>
         <br>
         <center><h2>Оставить отзыв</h2></center>

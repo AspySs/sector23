@@ -5,9 +5,14 @@ if($_SESSION['auth']=="true"){
 include 'includes/bd.php';
 $ALL = $bd -> query("SELECT * FROM `comments`");
 $ALLids = $bd -> query("SELECT `id` FROM `comments`");
+$ALLusers = $bd -> query("SELECT MAX(`id`) FROM `users`");
+$ALLtimes = $bd -> query("SELECT `time` FROM `users`");
 $bd->close();
+$COLVO = vivCOL1($ALLusers);
 $all = vivALL($ALL);
 $colvo = vivCOL($ALLids);
+$times = vivALLtimes($ALLtimes);
+$time = time();
 }else{header("Location: auth.php");}
 
 function vivALL($result_set){
@@ -26,6 +31,17 @@ $peopleK = array(array());
     unset($o);
     return $peopleK;
 }
+function vivALLtimes($result_set){
+$p = 0;
+$tim = array();
+    while(($row = $result_set->fetch_assoc()) != false){
+        $tim[$p] = $row["time"];
+        $p +=1;     
+        
+    } 
+    unset($p);
+    return $tim;
+}
 function vivCOL($result_set){
 
     while(($row = $result_set->fetch_assoc()) != false){        
@@ -34,8 +50,17 @@ function vivCOL($result_set){
         return $numb;
 }
 
-?>
+function vivCOL1($result_set){
 
+    while(($row = $result_set->fetch_assoc()) != false){
+
+        //echo $row["login"];
+        //echo "<br />";
+        return $row["MAX(`id`)"];
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,9 +72,9 @@ function vivCOL($result_set){
 <body>
 
     <ul id="stat">
-        <li>Сейчас онлайн: </li>
-        <li>Посещений сегодня: </li>
-        <li>Всего посещений: </li>
+        <li>Сейчас онлайн: <?php $today = 0; for($ii=0;$ii<$COLVO;$ii++){if($times[$ii] >= ($time - 600)){$today++;}} echo $today; ?> </li>
+        <li>Посещений сегодня: <?php $today = 0; for($ii=0;$ii<$COLVO;$ii++){if($times[$ii] >= ($time - 86400)){$today++;}} echo $today; ?> </li>
+        <li>Всего посещений: <?php echo $COLVO; ?> </li>
     </ul>
 
             <form action="buttons/exit.php" method="POST">
