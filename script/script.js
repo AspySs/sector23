@@ -1,4 +1,3 @@
-
 window.onload = function() {
         if (window.screen.width <= 768) {
             $('#topAn').animate({
@@ -38,6 +37,8 @@ window.onload = function() {
                     var text = setTimeout(()=>{
                         document.body.querySelector("#topAn").innerHTML = "<h1>Sector 23 <h1><h3>Зона активного отдыха<h3>";
                     }, 1000);
+
+                    $('body').css('overflow-y', 'visible');
             }
         }); }
     }
