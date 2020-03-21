@@ -103,8 +103,18 @@ echo "<div class=\"comment\">\n
 }
 ?>
 
+    </div>
 
-    <div id="blog"></div>
+
+    <div id="blog">
+    <form id="blogP" action="" method="post">
+            Аватар: <input type="file" id="logo" name="files" value="Выбрать фото" /> <br>
+            <output id="list"></output>
+            <textarea name="text" id="" cols="50" rows="10" maxlength="500" placeholder="Текст статьи"></textarea> <br>
+            Добавить фото: <input type="file" id="gallery" name="files" value="Выбрать фото"/> <br>
+            <input id="blogSubmit" type="submit" name="done" value="Опубликовать">
+    </form>
+    </div>
 
     <style>
         body {
@@ -151,13 +161,13 @@ echo "<div class=\"comment\">\n
             border-radius: 8px;
             border: 1px solid #373737;
             background-color: #303030;
-            box-shadow: 2px 4px 8px 0 #171717, -2px -4px 8px 0 #525252;
+            box-shadow: 2px 4px 6px 0 #171717, -2px -4px 6px 0 #525252;
             color: #c0c0c0;
             font-weight: 600;
             cursor: pointer;
             position: absolute;
             top: 10px;
-            right: 35px;
+            right: 15px;
         }
 
         #comBtn {
@@ -261,6 +271,29 @@ echo "<div class=\"comment\">\n
             margin-top: 15px;
         }
 
+        
+        #blogP {
+            width: 400px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #blogP * {
+            margin: 8px 0;
+        }
+
+        #blogSubmit {
+            display: inline-block;
+            background-color: red;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 20px;
+            color: #fff;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
         @media (max-width: 768px) {
 
             ul{
@@ -294,7 +327,15 @@ echo "<div class=\"comment\">\n
                 top: 240px;
                 left:calc(50% - 80px);
             }
+    
+            #blogP, #blogP * {
+                width: 100%;
+            }
 
+            #blogSubmit {
+                width: 70%;
+                left: 15%;
+            }
         }
 
 
