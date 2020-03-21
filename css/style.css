@@ -429,7 +429,28 @@ footer a {
     font-weight: 600;
 }
 
+
+#cube {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #212121;
+    box-sizing: border-box;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    animation: 4s cube infinite;
+    z-index: -1;
+}
+
+
 @media (max-width: 768px) {
+
+    
+#cube {
+    display: none;
+}
+
 
     body {
         background-color: #fff;
@@ -477,10 +498,10 @@ footer a {
     
     .comments .item h3 {
         display: inline-block;
-        width: 150px;
+        width: 130px;
         text-align: right;
         margin-bottom: 40px;
-        margin-right: 40px;
+        margin-right: 10px;
         margin-top: 30px;
     }
 
@@ -607,6 +628,7 @@ footer a {
 
     #price {
         flex-flow: column;
+        text-align: center;
         padding-bottom: 20px;
         border-bottom: 0.2px solid #d8d8d8;
     }
@@ -616,14 +638,35 @@ footer a {
         order: 0;
     }
 
-    #price p, #price h3 {
-        text-align: left;
+    #price h3, #price p {
         width: 100%;
-        text-align: left;
+        max-width: 100%;
     }
 
     #price img {
         max-width: 40%;
         margin-left: 30%;
     }
+}
+
+
+@keyframes cube {
+    from {
+        top: 60px;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: 110px;
+        transform: rotate(180deg);
+        border-radius: 50%;
+        border: 2px solid green;
+    }
+
+    to {
+        top: 60px;
+        border-radius: 0%;
+        transform: rotate(0deg);
+    }
+
 }

@@ -222,11 +222,13 @@ elseif (@$_GET['send']=='fail'){@$error = $_GET['error']; echo"<strong>".$error.
 include_once('includes/functions.php');
 ?>
     <form id="comment" action="comments.php" method="post" enctype="multipart/form-data">
+    <div id="cube"></div>
         <textarea id="" cols="25" rows="1" maxlength="60" type="text" placeholder="ФИО или ник" name="nickname"></textarea> <br>
         <input type="file" id="files" name="files" value="Выбрать фото" /> <br>
         <output id="list"></output>
         <textarea name="text" id="" cols="40" rows="10" maxlength="500" placeholder="Текст отзыва"></textarea> <br>
         <input id="comSubmit" type="submit" name="done" value="Отправить отзыв">
+    <div id="cube2"></div>
     </form>
 
 <script type="text/javascript">

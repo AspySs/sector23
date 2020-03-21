@@ -24,7 +24,7 @@ window.onload = function() {
         });  }
             else {
             $('#topAn').animate({
-                'left': '20px'
+                'left': '0'
             }, {
                 duration: 1500,
                 complete: function() {
