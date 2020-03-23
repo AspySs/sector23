@@ -1,5 +1,4 @@
-$('body').css('overflow-y', 'hidden');
-window.onload = function() {
+var animation = setTimeout(function() {
         if (window.screen.width <= 768) {
             $('#topAn').animate({
                 'left': '0'
@@ -44,7 +43,7 @@ window.onload = function() {
                     $('body').css('overflow-y', 'visible');
             }
         }); }
-    }
+    }, 1000);
         
     $(window).scroll(function (){
 
