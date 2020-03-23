@@ -1,4 +1,9 @@
-var animation = setTimeout(function() {
+document.body.onload = function() {
+    $('#preloader').animate({
+        'opacity': '0'
+    }, 400);
+
+    var animation = setTimeout(function() {
         if (window.screen.width <= 768) {
             $('#topAn').animate({
                 'left': '0'
@@ -16,10 +21,8 @@ var animation = setTimeout(function() {
     
                     var text = setTimeout(()=>{
                         document.body.querySelector("#topAn").innerHTML = "<h1>Sector 23 <h1><h3>Зона активного отдыха<h3>";
-                    }, 1000);
-                    
-        $('body').css('overflow-y', 'visible');
-            }
+                    }, 500);
+                }
         });  }
             else {
             $('#topAn').animate({
@@ -38,12 +41,14 @@ var animation = setTimeout(function() {
     
                     var text = setTimeout(()=>{
                         document.body.querySelector("#topAn").innerHTML = "<h1>Sector 23 <h1><h3>Зона активного отдыха<h3>";
-                    }, 1000);
+                    }, 600);
 
                     $('body').css('overflow-y', 'visible');
             }
         }); }
-    }, 1000);
+    }, 600);
+
+}
         
     $(window).scroll(function (){
 

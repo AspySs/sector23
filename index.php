@@ -36,6 +36,11 @@
             </script>
 </head>
 <body>
+
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
+
     <span class="topBtn"><img src="./img/top.svg"></span>
     <header>
         <img src="./img/logo.svg" id="logo">
