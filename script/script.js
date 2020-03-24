@@ -3,6 +3,8 @@ document.body.onload = function() {
         'opacity': '0'
     }, 400);
 
+    $('#preloader').css('display', 'none');
+
     var animation = setTimeout(function() {
         if (window.screen.width <= 768) {
             $('#topAn').animate({

@@ -25,6 +25,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: #0c0c0c;
+    top: 0;
+    left: 0;
     z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999;
 }
 
@@ -64,7 +66,7 @@ body {
     bottom: 50px;
     width: 40px;
     cursor: pointer;
-    z-index: 9999999999;
+    z-index: 888888888888;
 }
 
 .topBtn img {
@@ -102,7 +104,7 @@ header {
     height: 55px;
     padding: 10px 0;
     background-color: var(--dark);
-    z-index: 99999;
+    z-index: 888888888;
 }
 
 header a {
@@ -131,7 +133,7 @@ header a:hover {
     top: 60px;
     background-color: var(--dark);
     transition: ease-out 0.8s;
-    z-index: 99999999999;
+    z-index: 888888888888888;
     border-bottom-right-radius: 12px;
 }
 
