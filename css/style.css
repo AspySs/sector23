@@ -27,22 +27,22 @@ body {
     background-color: #0c0c0c;
     top: 0;
     left: 0;
-    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999;
+    z-index: 5;
 }
 
 #loader {
     display: inline-block;
     width: 75px;
     height: 75px;
-    border: 4px solid #9999;
     border-radius: 50%;
-    border-top-color: #6666;
-    border-bottom-color: #6666;
+    border:  4px solid #0c0c0c;
+    border-top-color: var(--green);
+    border-bottom-color: var(--green);
     position: absolute;
     top: 50%;
     left: 50%;
     margin: -37.5px 0 0 -37.5px;
-    animation: 1.5s spin ease-in-out infinite;
+    animation: 1s spin ease-in-out infinite;
 }
 
 
@@ -66,7 +66,7 @@ body {
     bottom: 50px;
     width: 40px;
     cursor: pointer;
-    z-index: 888888888888;
+    z-index: 3;
 }
 
 .topBtn img {
@@ -104,7 +104,7 @@ header {
     height: 55px;
     padding: 10px 0;
     background-color: var(--dark);
-    z-index: 888888888;
+    z-index: 3;
 }
 
 header a {
@@ -133,7 +133,7 @@ header a:hover {
     top: 60px;
     background-color: var(--dark);
     transition: ease-out 0.8s;
-    z-index: 888888888888888;
+    z-index: 3;
     border-bottom-right-radius: 12px;
 }
 
