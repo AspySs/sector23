@@ -3,7 +3,6 @@ if(isset($_POST['done'])){
 include 'includes/bd.php';
 $hash1 = $bd->query("SELECT `password` FROM `admin`");
 $salt1 = $bd->query("SELECT `salt` FROM `admin`");
-$bd->close();
 $hash = vivpass($hash1); // root in md5 + salt! 
 $salt = vivsalt($salt1);  
 $password = $_POST["passold"];
@@ -11,10 +10,11 @@ if (check_password($salt, $password, $hash)){
 	if(($_POST['passnew'] == $_POST['passnew2'])&&(strlen($_POST['passnew']) != 0)){
 	$pass = $_POST['passnew'];
 	$new_hash = md5($pass.$salt);
-	$bd -> query("UPDATE `admin` SET `password` = '".$new_hash."' WHERE `admin`.`password` = ".$hash.";");
-	header('Location: auth?error=true&errorT=PAROL USPESHNO SMENEN!!!&top=60');
-}else{header('Location: auth?error=true&errorT=PAROLI NE SOVPADAYT&top=60');}
-}else{header('Location: auth?error=true&errorT=Wrong PASSWORD&top=60');}
+	$bd -> query("UPDATE `admin` SET `password` = '".$new_hash."' WHERE `admin`.`id` = 1;");
+	header('Location: pass?error=true&errorT=PAROL USPESHNO SMENEN!!!&top=60');
+}else{header('Location: pass?error=true&errorT=PAROLI NE SOVPADAYT&top=60');}
+}else{header('Location: pass?error=true&errorT=Wrong PASSWORD&top=60');}
+$bd->close();
 }
 
 
@@ -76,10 +76,9 @@ if ($_GET["error"] == true)
 
 	?>
 	<form action="" method="POST">
-		<input type="text" name="passold" placeholder="пароль">
-		<input type="text" name="passnew" placeholder="новый пароль">
-		<input type="text" name="passnew2" placeholder="новый пароль еще раз!">
-		<input type="text" name="salt" placeholder="SALT">
+		<input type="text" name="passold" placeholder="пароль"></br></br>
+		<input type="text" name="passnew" placeholder="новый пароль"></br></br>
+		<input type="text" name="passnew2" placeholder="новый пароль еще раз!"></br></br>
 		<input type="submit" name="done">
 	</form>
 
