@@ -3,9 +3,12 @@ ini_set('display_errors','Off');
 error_reporting('E_ALL');
 session_set_cookie_params(21600);
 session_start();
-$baza = "L1pd7sHSW4TAbQg";
-$salt = "ioyypQNDZs2o5tm";
-$hash = 'ad0d74b11455bc63cdaaa7ddd88d30fd'; // root in md5 + salt!  
+include 'includes/bd.php';
+$hash1 = $bd->query("SELECT `password` FROM `admin`");
+$salt1 = $bd->query("SELECT `salt` FROM `admin`");
+$bd->close();
+$hash = vivpass($hash1); // root in md5 + salt! 
+$salt = vivsalt($salt1);  
 $password = @$_POST["pass"];  
 
 if (($_POST != null)&&($_POST["done"] == "Войти"))
@@ -25,7 +28,18 @@ function check_password($salt, $password, $hash) {
     return ($hash == $new_hash); 
 }
 
-
+function vivpass($result_set){
+    while(($row = $result_set->fetch_assoc()) != false){
+        $lol = $row["password"];  
+    } 
+    return $lol;
+}
+function vivsalt($result_set){
+    while(($row = $result_set->fetch_assoc()) != false){
+        $lol1 = $row["salt"];  
+    } 
+    return $lol1;
+}
 ?>
 
 
@@ -79,7 +93,7 @@ ini_set('display_errors','On');
 		</form>
 	</div>
 
-	<a href="http://sector.sphinxs.ru" id="backToMain">Вернуться на сайт</a>
+	<a href="http://sector23.ru/index.php" id="backToMain">Вернуться на сайт</a>
 
 	<style>
 
