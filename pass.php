@@ -46,7 +46,6 @@ function vivsalt($result_set){
 	<title>СМЕНА ПАРОЛЯ</title>
 </head>
 <body>
-	<div id="auth-all">
 	<?php
 
 if ($_GET["error"] == true)
@@ -79,64 +78,44 @@ if ($_GET["error"] == true)
 		<input type="text" name="passold" placeholder="пароль"></br></br>
 		<input type="text" name="passnew" placeholder="новый пароль"></br></br>
 		<input type="text" name="passnew2" placeholder="новый пароль еще раз!"></br></br>
-		<input type="submit" name="done">
+		<input type="submit" name="done" id='changePass' value='Изменить пароль'>
 	</form>
 
 	<style>
-
-
-body {
-	margin: 0;
-	font-family: 'Open Sans', sans-serif;
-	background-color: #272727;
-	color: #fff;
-}
-
-
-.textbox {
-	width: 200px;
-	height: 30px;
-	line-height: 30px;
-	font-size: 17px;
-	padding: 0 5px;
-	border: 1px solid;
-	border-radius: 5px;
-	border-color: #6d6d6d;
-	color: rgb(124, 124, 124);
-	background-color: rgb(223, 223, 223);
-}
-
-.sub {
-	font-weight: bold;
-	width: 95px;
-	height: 35px;
-	margin-top: 20px;
-	background-color: #865FC5;
-	color: #ffffff;
-	border: 1px solid #171717;
-	border-radius: 8px;
-	border-color: rgb(24, 18, 48);
-}
-
-#auth {
-	margin-top: 20%;
-}
-
-#auth-all {
-	display: inline-block;
-	width: 500px;
-	text-align: center;
-	margin-top: 15%;
-	margin-left: calc(50% - 250px);
-}
-
-@media (max-width: 768px) {
-	#auth-all {
-		width: 100%;
-		margin-left: 0;
-		margin-top: 30vh;
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: #323232;
 	}
-}
+	
+	#changePass {
+		display: inline-block;
+		width: 140px;
+		margin-top: 10px;
+		color: #898989;
+		border: none;
+		background-color: #333333;
+		padding: 8px 16px;
+		border-radius: 8px;
+		box-shadow: -1px -1px 6px #555555,
+		2px 2px 6px #101010;
+		cursor: pointer;
+	}
+
+	form {
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		width: 400px;
+		left: calc(50% - 200px);
+		top: 30vh;
+	}
+
+	input:not(#changePass) {
+		padding: 2px 5px;
+		border-radius: 4px;
+	}
+
 	</style>
 </body>
 </html>
