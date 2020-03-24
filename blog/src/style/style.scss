@@ -14,8 +14,50 @@ body {
     background-color: #212121;
     .info {
         display: inline-block;
-        width: 400px;
+        position: absolute;
+        top: 35%;
+        left: calc(50% - 150px);
+        width: 300px;
         @include font;
         color: #999999;
+    }
+
+    .anim {
+        display: inline-block;
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background-color: #fff;
+        animation: 4s anim ease-in-out infinite;
+    }
+
+}
+
+@keyframes anim {
+    from {
+        left: 0;
+        background-color: #fff;
+    }
+
+    25% {
+        background-color: green;
+        left: 50%;
+    }
+
+    50% {
+        background-color: #fff;
+        left: calc(100% - 30px);
+    }
+
+    75% {
+        left: 50%;
+        background-color: green;
+    }
+
+    to {
+        left: 0;
+        background-color: #fff;
     }
 }
