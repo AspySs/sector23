@@ -431,7 +431,8 @@ footer a {
 
 #comment textarea {
     resize: none;
-    padding: 3px;
+    padding: 3px 5px;
+    border-radius: 4px;
     margin: 5px 0;
 }
 
@@ -449,7 +450,7 @@ footer a {
     border-radius: 8px;
     border: none;
     background-color: rgb(248, 29, 40);
-    border: 2px solid rgb(201, 17, 17);
+    border: none;
     color: #fff;
     font-weight: 600;
 }
