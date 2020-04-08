@@ -1,59 +1,79 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic");
-* {
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:500|Roboto&display=swap&subset=cyrillic");
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: "1em";
   margin: 0;
   padding: 0;
 }
 
-body {
-  background-color: #212121;
-}
-body .info {
-  display: inline-block;
-  position: absolute;
-  top: 35%;
-  left: calc(50% - 150px);
-  width: 300px;
-  font-size: 24px;
+header {
+  font-family: "Rajdhani", sans-serif;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
-  color: #999999;
-}
-body .anim {
+  font-size: 1.8em;
+  color: #fff;
   display: inline-block;
-  width: 30px;
-  height: 2px;
+  box-sizing: border-box;
+  text-shadow: 2px 2px 5px #0c0c0c;
+  width: 100%;
+  height: 50px;
+  padding: 5px 20px;
+  background-color: #474747;
+}
+
+#content {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 80%;
+  margin-left: 10%;
+}
+#content h2 {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 0;
+}
+#content h2::before {
+  display: inline-block;
+  content: "";
   position: absolute;
-  top: 50%;
   left: 0;
-  background-color: #fff;
-  animation: 4s anim ease-in-out infinite;
+  width: 3px;
+  height: 100%;
+  background-color: #bd3a28;
+}
+#content article {
+  display: inline-block;
+  width: 100%;
+}
+#content article h3 {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+#content article p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: "1em";
+}
+#content article img {
+  width: 100%;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 768px) {
-  .info {
+  #content {
+    width: 96%;
+    margin-left: 2%;
+  }
+  #content h2 {
     width: 100%;
+    padding-left: 0;
     text-align: center;
   }
-}
-@keyframes anim {
-  from {
-    left: 0;
-    background-color: #fff;
-  }
-  25% {
-    background-color: green;
-    left: calc(50% - 15px);
-  }
-  50% {
-    background-color: #fff;
-    left: calc(100% - 30px);
-  }
-  75% {
-    left: calc(50% - 15px);
-    background-color: green;
-  }
-  to {
-    left: 0;
-    background-color: #fff;
+  #content h2:before {
+    display: none;
   }
 }

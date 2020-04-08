@@ -1,70 +1,96 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:500|Roboto&display=swap&subset=cyrillic');
 
-@mixin font {
-    font-size: 24px;
-    font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+//font-family: 'Rajdhani', sans-serif;
+//font-family: 'Roboto', sans-serif;
+@mixin font-h($font-size: '1em') {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 500;
+        font-size: $font-size;
 }
 
-* {
+@mixin font($font-size: '1em') {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: $font-size;
+}
+
+body {
+    @include font;
     margin: 0;
     padding: 0;
 }
-body {
-    background-color: #212121;
-    .info {
+
+    header {
+        @include font-h(1.8em);
+        color: #fff;
         display: inline-block;
-        position: absolute;
-        top: 35%;
-        left: calc(50% - 150px);
-        width: 300px;
-        @include font;
-        color: #999999;
+        box-sizing: border-box;
+        text-shadow: 2px 2px 5px #0c0c0c;
+        width: 100%;
+        height: 50px;
+        padding: 5px 20px;
+        background-color: rgb(71, 71, 71);
+        
     }
 
-    .anim {
+    #content {
         display: inline-block;
-        width: 30px;
-        height: 2px;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        background-color: #fff;
-        animation: 4s anim ease-in-out infinite;
-    }
+        box-sizing: border-box;
+        width: 80%;
+        margin-left: 10%;
 
-}
+        h2 {
+          display: inline-block;
+          box-sizing: border-box;
+          padding-left: 30px;
+          position: relative;
+          margin-bottom: 0;
+
+          &::before {
+              display: inline-block;
+              content: '';
+              position: absolute;
+              left: 0;
+              width: 3px;
+              height: 100%;
+              background-color: rgb(189, 58, 40);
+          }
+        }
+    
+        article {
+            display: inline-block;
+            width: 100%;
+
+            h3 {
+                @include font-h(1.3em);
+                margin-bottom: 5px;
+            }
+
+            p {
+                @include font;
+            }
+
+            img {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
 
 @media (max-width: 768px) {
-    .info {
-        width: 100%;
-        text-align: center;
-    }
-}
+    #content {
+        width: 96%;
+        margin-left: 2%;
 
-@keyframes anim {
-    from {
-        left: 0;
-        background-color: #fff;
-    }
+        h2 {
+            width: 100%;
+            padding-left: 0;
+            text-align: center;
 
-    25% {
-        background-color: green;
-        left: calc(50% - 15px);
-    }
+            &:before {
+                display: none;
+            }
+        }
 
-    50% {
-        background-color: #fff;
-        left: calc(100% - 30px);
-    }
-
-    75% {
-        left: calc(50% - 15px);
-        background-color: green;
-    }
-
-    to {
-        left: 0;
-        background-color: #fff;
     }
 }
