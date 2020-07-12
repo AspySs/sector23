@@ -45,7 +45,7 @@
     <header>
         <img src="./img/logo.svg" id="logo">
         <div id="mobileHeaderName">Sector 23</div>
-        <a href="#">Блог</a>
+        <a href="https://sector23.ru/blog/">Блог</a>
         <a href="#">Цены</a>
         <a href="#">О нас</a>
         <span id="mobileMenuBtn">
@@ -58,7 +58,7 @@
     <ul id="mobileMenu">
         <span><a href="#">О нас</a></span>
         <span><a href="#">Цены</a></span>
-        <span><a href="#">Блог</a></span>
+        <span><a href="https://sector23.ru/blog/">Блог</a></span>
     </ul>
 
     <div class="content">
@@ -143,6 +143,7 @@
                 <div>
                     <h3>Пейнтбол</h3>
                     <p>
+                        с 1 человека:<br>
                         500 руб. - экипировка<br>
                         2 руб. - шарик с краской
                     </p>
@@ -150,7 +151,8 @@
                 <div>
                     <h3>Лазертаг</h3>
                     <p>
-                        400 руб. / час
+                        с 1 человека:<br>
+                        450 руб. / час
                     </p>
                 </div>
             </div>
